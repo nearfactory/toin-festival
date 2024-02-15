@@ -15,7 +15,7 @@
    　（**間違ってmasterブランチで開発しないように!**）
    
 3. 自分のブランチ内で開発が完了したら、Pull requestを作成する。
-   
-  　 [Pull requests] → [New pull request] → [base: master]/[compare: 自分のブランチ] → [Create pull request]
+
+   [Pull requests] → [New pull request] → [base: master]/[compare: 自分のブランチ] → [Create pull request]
     
-4. 管理者はmasterブランチへのpull requestを承認または拒否する。
+5. 管理者はmasterブランチへのpull requestを承認または拒否する。
