@@ -1,8 +1,8 @@
 # toinsai-kagaku
 
-![Logo](/logo.png)
-
 桐蔭祭 待ち時間表示アプリケーション
+
+![Logo](/logo.png)
 
 ## 開発の流れ
 
