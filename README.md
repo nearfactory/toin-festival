@@ -1,6 +1,6 @@
 # toinsai-kagaku
 
-![Logo](https://myoctocat.com/assets/images/base-octocat.svg)
+![Logo](/logo.png)
 
 桐蔭祭 待ち時間表示アプリケーション
 
