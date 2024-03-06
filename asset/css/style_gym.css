@@ -1,0 +1,171 @@
+@charset "utf-8";
+
+#sectionGym{
+  width: 100%;
+
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.gymDateContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  width: 80%;
+  height: auto;
+
+  margin: 0 auto;
+  padding: 0;
+}
+
+.gymDateContainer>div{
+  display: grid;
+  grid-template-rows: 1.5fr 4fr 1fr 1.5fr;
+
+  width: 90%;
+  height: 8rem;
+
+  margin: auto;
+  padding: 0;
+  
+  border: none;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow:
+    7px 7px 25px #e6e6e6,
+    -7px -7px 25px #ffffff;
+}
+
+.gymDateContainer>div.active{
+  background: #f0f0f0;
+  box-shadow:
+    7px 7px 25px #dadada,
+    -7px -7px 25px #f0f0f0;
+}
+
+.gymDateContainer>div>h1{
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  color: #222222;
+  font-size: 4rem;
+  font-weight: 600;
+
+  line-height: calc(8rem / 8 * 4);
+  text-align: center;
+}
+
+.gymDateContainer>div>p{
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  color: #222222;
+  font-size: 0.875rem;
+  font-weight: 600;
+
+  line-height: calc(8rem / 8 * 1);
+  text-align: center;
+}
+
+.gymScheduleContainer{
+  display: none;
+
+  width: 100%;
+  height: auto;
+
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.gymScheduleContainer.active{
+  display: block;
+}
+
+.gymSchedule{
+  display: grid;
+  grid-template:
+    "time title" 1fr
+    "span desc" 5fr
+    / 1fr 5fr;
+
+  width: 70%;
+  height: 10rem;
+
+  margin: 0;
+  padding: 1rem 15%;
+}
+
+.gymSchedule:nth-of-type(2n+1){
+  background-color: #ffffff;
+}
+
+.gymSchedule:nth-of-type(2n){
+  background-color: #fafafa;
+}
+
+.gymSchedule.current{
+  background-color: #2ec8ee22;
+}
+
+.gymSchedule>h2{
+  grid-area: time;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  color: #222222;
+  font-size: 1.25rem;
+  font-weight: 400;
+
+  line-height: calc(10rem / 6 * 1);
+  text-align: center;
+}
+
+.gymSchedule>h1{
+  grid-area: title;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  color: #222222;
+  font-size: 1.25rem;
+  font-weight: 500;
+
+  line-height: calc(10rem / 6 * 1);
+  text-align: left;
+}
+
+.gymSchedule>p{
+  grid-area: desc;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  color: #222222;
+  font-size: 1rem;
+  font-weight: 500;
+
+  line-height: calc(10rem / 6 * 5 / 5);
+  text-align: left;
+}
