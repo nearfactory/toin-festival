@@ -48,6 +48,7 @@ header>a{
 
   background-color: #ffffff88;
   backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 /* ======================================== */
