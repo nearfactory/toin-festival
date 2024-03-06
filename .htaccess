@@ -1,0 +1,4 @@
+AuthType     Basic
+AuthName     "Toin Festival HP"
+AuthUserFile /.htpasswd
+require valid-user
