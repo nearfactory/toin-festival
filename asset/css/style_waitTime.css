@@ -137,6 +137,47 @@
   transition: all .25s;
 }
 
+#classDesc1, #classDesc4, #classDesc7{
+  background: url("../../image/test1.jpg") no-repeat center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+#classDesc2, #classDesc5{
+  background: url("../../image/test2.jpg") no-repeat center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+#classDesc3, #classDesc6{
+  background: url("../../image/test3.jpg") no-repeat center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.classDesc:before{
+  content: '';
+  background: inherit;
+  filter: blur(8px);
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -2;
+}
+
+.classDesc::after{
+  content: '';
+  background: #ffffffbb;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+}
+
 .classDesc.current{
   transform: translateY(0);
 }
@@ -222,7 +263,7 @@
   display: block;
 
   width: 70%;
-  height: calc(1.375rem * 15);
+  height: calc(1.375rem * 8);
 
   margin: 0;
   padding: 1rem 15%;
