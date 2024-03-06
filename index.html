@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>桐蔭祭 HP</title>
+
+    <!--FontAwesome読み込み-->
+    <script src="https://kit.fontawesome.com/2cd68e5bc6.js" crossorigin="anonymous"></script>
+
+    <!--リセットcssの読み込み-->
+    <link href="./asset/css/reset.css" rel="stylesheet">
+
+    <!--自作cssの読み込み-->
+    <link href="./asset/css/style.css" rel="stylesheet">
+
+    <!--googleFontsの読み込み-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=IBM+Plex+Sans+JP:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  
+  <body>
+    <header>
+      <a href="./index.html">
+        TOIN-FESTIVAL&nbsp;2024
+        <!-- <img src="./test.png" alt="LOGO"> -->
+      </a>
+    </header>
+
+    <!-- <button id="navBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav>
+      <h1>MENU</h1>
+      <a href="#home" class="navLink">ホーム</a>
+      <a href="#booth" class="navLink">出し物一覧</a>
+      <a href="#" class="navLink">校内図</a>
+      <a href="#gym" class="navLink">体育館出し物の時間</a>
+      <a href="#council" class="navLink">生徒会企画</a>
+      <a href="#aboutus" class="navLink">制作者について</a>
+    </nav> -->
+
+    <nav>
+      <span></span>
+      <div id="navWaitTime" class="navItem current"><span></span><i class="fa-regular fa-clock"></i><p>待ち時間</p><span></span></div>
+      <div id="navGym" class="navItem"><span></span><i class="fa-solid fa-dumbbell"></i><p>体育館</p><span></span></div>
+      <div id="navMap" class="navItem"><span></span><i class="fa-solid fa-location-dot"></i><p>校内マップ</p><span></span></div>
+      <div id="navAboutUs" class="navItem"><span></span><i class="fa-solid fa-circle-nodes"></i><p>制作者について</p><span></span></div>
+      <span></span>
+    </nav>
+
+    <span id="topSpan"></span>
+    
+    <div class="section current" id="sectionWaitTime">
+      <div class="waitContainer" id="waitClass1">
+        <h1 class="waitClass">2-A</h1>
+        <p class="waitTitle">あっぱれ、ふじキング!!!</p>
+        <p class="waitTime" id="waitTime1">15</p>
+      </div>
+      <div class="waitContainer" id="waitClass2">
+        <h1 class="waitClass">2-B</h1>
+        <p class="waitTitle">ライス、おかわりせぇへん?</p>
+        <p class="waitTime" id="waitTime2">20</p>
+      </div>
+      <div class="waitContainer" id="waitClass3">
+        <h1 class="waitClass">2-C</h1>
+        <p class="waitTitle">ええやろ、これ。俺もすっきゃねん。</p>
+        <p class="waitTime" id="waitTime3">0</p>
+      </div>
+      <div class="waitContainer" id="waitClass4">
+        <h1 class="waitClass">2-D</h1>
+        <p class="waitTitle">The Teacher -named MOEKA-</p>
+        <p class="waitTime" id="waitTime4">10</p>
+      </div>
+      <div class="waitContainer" id="waitClass5">
+        <h1 class="waitClass">2-E</h1>
+        <p class="waitTitle">りんちゃん部長によろしく！</p>
+        <p class="waitTime" id="waitTime5">35</p>
+      </div>
+      <div class="waitContainer" id="waitClass6">
+        <h1 class="waitClass">2-F</h1>
+        <p class="waitTitle">ここからの生き方を教えてください!!</p>
+        <p class="waitTime" id="waitTime6">5</p>
+      </div>
+      <div class="waitContainer" id="waitClass7">
+        <p class="waitClass">2-G</p>
+        <p class="waitTitle">今から出産します!!</p>
+        <p class="waitTime" id="waitTime7">10</p>
+      </div>
+    </div>
+
+    <div class="classDesc" id="classDesc1">
+      <p class="classDescClass">2-A</p>
+      <p class="classDescTitle">あっぱれ、ふじキング!!!</p>
+      <p class="classDescDesc">説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文</p>
+      <div class="classDescTimeContainer">
+        <div class="classDescGroupTime"><p>体験所要時間</p>10</div>
+        <div class="classDescWaitTime"><p>待ち時間</p>99</div>
+        <div class="classDescEstimatedTime"><p>予定案内時刻</p>08:10</div>
+      </div>
+    </div>
+
+    <div class="classDesc" id="classDesc2">
+      <p class="classDescClass">2-B</p>
+      <p class="classDescTitle">タイトル</p>
+      <p class="classDescDesc">説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文</p>
+      <div class="classDescTimeContainer">
+        <div class="classDescGroupTime"><p>体験所要時間</p>05</div>
+        <div class="classDescWaitTime"><p>待ち時間</p>20</div>
+        <div class="classDescEstimatedTime"><p>予定案内時刻</p>08:15</div>
+      </div>
+    </div>
+
+    <div class="classDesc" id="classDesc3">
+      <p class="classDescClass">2-C</p>
+      <p class="classDescTitle">タイトル</p>
+      <p class="classDescDesc">説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文</p>
+      <div class="classDescTimeContainer">
+        <div class="classDescGroupTime"><p>体験所要時間</p>05</div>
+        <div class="classDescWaitTime"><p>待ち時間</p>20</div>
+        <div class="classDescEstimatedTime"><p>予定案内時刻</p>08:15</div>
+      </div>
+    </div>
+
+    <div class="classDesc" id="classDesc4">
+      <p class="classDescClass">2-D</p>
+      <p class="classDescTitle">タイトル</p>
+      <p class="classDescDesc">説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文</p>
+      <div class="classDescTimeContainer">
+        <div class="classDescGroupTime"><p>体験所要時間</p>05</div>
+        <div class="classDescWaitTime"><p>待ち時間</p>20</div>
+        <div class="classDescEstimatedTime"><p>予定案内時刻</p>08:15</div>
+      </div>
+    </div>
+
+    <div class="classDesc" id="classDesc5">
+      <p class="classDescClass">2-E</p>
+      <p class="classDescTitle">タイトル</p>
+      <p class="classDescDesc">説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文</p>
+      <div class="classDescTimeContainer">
+        <div class="classDescGroupTime"><p>体験所要時間</p>05</div>
+        <div class="classDescWaitTime"><p>待ち時間</p>20</div>
+        <div class="classDescEstimatedTime"><p>予定案内時刻</p>08:15</div>
+      </div>
+    </div>
+
+    <div class="classDesc" id="classDesc6">
+      <p class="classDescClass">2-F</p>
+      <p class="classDescTitle">タイトル</p>
+      <p class="classDescDesc">説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文</p>
+      <div class="classDescTimeContainer">
+        <div class="classDescGroupTime"><p>体験所要時間</p>05</div>
+        <div class="classDescWaitTime"><p>待ち時間</p>20</div>
+        <div class="classDescEstimatedTime"><p>予定案内時刻</p>08:15</div>
+      </div>
+    </div>
+
+    <div class="classDesc" id="classDesc7">
+      <p class="classDescClass">2-G</p>
+      <p class="classDescTitle">タイトル</p>
+      <p class="classDescDesc">説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文</p>
+      <div class="classDescTimeContainer">
+        <div class="classDescGroupTime"><p>体験所要時間</p>05</div>
+        <div class="classDescWaitTime"><p>待ち時間</p>20</div>
+        <div class="classDescEstimatedTime"><p>予定案内時刻</p>08:15</div>
+      </div>
+    </div>
+
+    <div class="section" id="sectionGym">
+      <div class="gymDateContainer">
+        <div class="active" id="day1"><span></span><h1>9/17</h1><p>Mon</p><span></span></div>
+        <div id="day2"><span></span><h1>9/18</h1><p>Tue</p><span></span></div>
+      </div>
+
+      <div class="gymScheduleContainer active" id="scheduleDay1">
+        <div class="gymSchedule" id="gymSchedule1Day1">
+          <h2 id="gymScheduleTime1">9:30</h2>
+          <h1 id="gymScheduleTitle1">フジキノダンス</h1>
+          <p id="gymScheduleDesc1">ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木</p>
+        </div>
+
+        <div class="gymSchedule current" id="gymSchedule2Day1">
+          <h2 id="gymScheduleTime2">10:30</h2>
+          <h1 id="gymScheduleTitle2">フジキノダンス</h1>
+          <p id="gymScheduleDesc2">ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木</p>
+        </div>
+
+        <div class="gymSchedule" id="gymSchedule3Day1">
+          <h2 id="gymScheduleTime3">11:00</h2>
+          <h1 id="gymScheduleTitle3">フジキノダンス</h1>
+          <p id="gymScheduleDesc3">ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木</p>
+        </div>
+
+        <div class="gymSchedule" id="gymSchedule4Day1">
+          <h2 id="gymScheduleTime4">12:15</h2>
+          <h1 id="gymScheduleTitle4">フジキノダンス</h1>
+          <p id="gymScheduleDesc4">ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木</p>
+        </div>
+
+        <div class="gymSchedule" id="gymSchedule5Day1">
+          <h2 id="gymScheduleTime5">13:30</h2>
+          <h1 id="gymScheduleTitle5">フジキノダンス</h1>
+          <p id="gymScheduleDesc5">ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木ド級の藤木</p>
+        </div>
+      </div>
+
+      <div class="gymScheduleContainer" id="scheduleDay2">
+      </div>
+    </div>
+
+    <div id="currentTimeWindow">
+      <p id="currentDate"></p>
+      <p id="currentTime"></p>
+      <p id="remainingTime"></p>
+    </div>
+
+    <footer>
+      <!-- <div id="footerSNS">
+        <p id="SNSX"><i class="fa-brands fa-square-x-twitter"></i>&emsp;<a href="https://x.com/toinkagaku/">@Toinkagaku</a></p>
+        <p id="SNSLink"><i class="fa-solid fa-link"></i>&emsp;<a href="https://wakayama-space.org/">宇宙教育研究会HP</a></p>
+      </div> -->
+      <p id="copyright">
+        Copyright &copy; 2024 Toin Science Club
+      </p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity = "sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin = "anonymous"></script>
+    <script src="./asset/js/script.js"></script>
+  </body>
+</html>
