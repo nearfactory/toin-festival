@@ -1,0 +1,805 @@
+@charset "utf-8";
+
+:root{
+  --headerHeight: 3rem;
+  --navHeight: 4rem;
+  --footerHeight: 3rem;
+}
+
+html, body{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  font-family: "Barlow Semi Condensed", "IBM Plex Sans JP", sans-serif;
+  font-size: 10px;
+
+  background-color: #f8f8f8;
+}
+
+/* ======================================== */
+
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  
+  display: block;
+
+  width: 100%;
+  height: var(--headerHeight);
+}
+
+header>a{
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  color: #222222;
+  font-size: 1.75rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+
+  line-height: var(--headerHeight);
+  text-align: center;
+  text-decoration: none;
+
+  background-color: #ffffff88;
+  backdrop-filter: blur(5px);
+}
+
+/* ======================================== */
+
+/* #navBtn{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  display: block;
+  
+  width: var(--headerHeight);
+  height: var(--headerHeight);
+
+  border: none;
+  border-radius: 0;
+
+  background-color: #ffffff00;
+}
+
+#navBtn span{
+  display: block;
+  margin: 4px auto;
+  width: calc(var(--headerHeight) * 0.35);
+  height: 1px;
+
+  background-color: #222222;
+  opacity: 1;
+
+  transition: all .25s;
+}
+
+#navBtn.active span:nth-of-type(1){
+  transform: translateY(5px);
+  opacity: 0;
+}
+
+#navBtn.active span:nth-of-type(3){
+  transform: translateY(-5px);
+  opacity: 0;
+} */
+
+/* ======================================== */
+
+/* nav{
+  position: fixed;
+  top: var(--headerHeight);
+  left: 0;
+  z-index: 100;
+
+  height: calc(100dvh - var(--headerHeight));
+  width: 35%;
+
+  background-color: #c0c0c066;
+  backdrop-filter: blur(5px);
+
+  transform: translateX(-100%);
+  transition: all .25s;
+}
+
+nav.active{
+  transform: translateX(0);
+}
+
+nav>h1{
+  display: block;
+
+  width: calc(100% - 4rem);
+  height: auto;
+  margin: 6rem 0 0 0;
+  padding: 0 2rem;
+
+  color: #222222;
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  line-height: 3rem;
+  text-align: left;
+}
+
+nav>a{
+  display: block;
+
+  width: calc(100% - 4rem);
+  height: auto;
+  margin: 2rem 0 0 0;
+  padding: 0 2rem;
+
+  color: #222222;
+  font-size: 1rem;
+  font-weight: 500;
+
+  line-height: 2rem;
+  text-align: left;
+} */
+
+/* ======================================== */
+
+nav{
+  position: fixed;
+  top: var(--headerHeight);
+  left: 0;
+  z-index: 1;
+  
+  display: grid;
+  grid-template-columns: 0.25fr 1fr 1fr 1fr 1fr 0.25fr;
+
+  width: 100%;
+  height: var(--navHeight);
+
+  padding: 0;
+
+  background-color: #ffffff88;
+}
+
+nav>span{
+  display: block;
+
+  width: 100%;
+  height: calc(100% - 1px);
+
+  margin: 0;
+  padding: 0;
+
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: #2ec8ee solid 1px;
+}
+
+.navItem{
+  display: grid;
+  grid-template-rows: 0.5fr 2fr 1fr 0.5fr;
+
+  width: 100%;
+  height: calc(100% - 1px);
+
+  margin: 0;
+  padding: 0;
+
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: #2ec8ee solid 1px;
+  border-radius: 0.5rem 0.5rem 0 0;
+
+  color: #777777;
+
+  text-decoration: none;
+}
+
+.navItem>i{
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  color: #222222;
+  font-size: 1.5rem;
+
+  line-height: calc(var(--navHeight) / 4 * 2);
+  text-align: center;
+  text-decoration: none;
+
+  transition: all .25s;
+}
+
+.navItem>p{
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  font-size: 0.75rem;
+
+  line-height: calc(var(--navHeight) / 4 * 1);
+  text-align: center;
+  text-decoration: none;
+}
+
+.navItem.current{
+  width: calc(100% - 2px);
+
+  border-top: #2ec8ee solid 1px;
+  border-right: #2ec8ee solid 1px;
+  border-left: #2ec8ee solid 1px;
+  border-bottom: none;
+
+  background-color: #f8f8f8;
+}
+
+.navItem.current>i{
+  color: #2ec8ee;
+}
+
+/* ======================================== */
+
+#topSpan{
+  display: block;
+  width: 100%;
+  height: calc(var(--headerHeight) + var(--navHeight) + 1rem);
+}
+
+/* ======================================== */
+
+.section{
+  display: none;
+
+  height: auto;
+
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.section.current{
+  display: block;
+}
+
+/* ======================================== */
+
+#sectionWaitTime{
+  width: 90%;
+
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.waitContainer{
+  display: grid;
+  grid-template:
+    "class time" 2fr
+    "title time" 3fr
+    / 1fr 6rem;
+  
+  width: 100%;
+  height: 5rem;
+
+  margin: 0 auto 1.5rem auto;
+  padding: 0;
+  
+  border-radius: 15px;
+  background: linear-gradient(225deg, #e9e9e9, #ffffff);
+  box-shadow:
+    -15px 15px 30px #e9e9e9,
+    15px -15px 30px #ffffff;
+}
+
+.waitClass{
+  grid-area: class;
+
+  display: block;
+  width: calc(100% - 3rem);
+  height: calc(100% - 0.5rem);
+
+  margin: 0;
+  padding: 0.5rem 1.5rem 0 2.5rem;
+
+  color: #222222;
+  font-size: 1.25rem;
+  font-weight: 400;
+
+  line-height: 1.5rem;
+  text-align: left;
+}
+
+.waitTitle{
+  grid-area: title;
+
+  display: block;
+  width: calc(100% - 3rem);
+  height: calc(100% - 0.5rem);
+
+  margin: 0;
+  padding: 0 1.5rem 0.5rem 2.5rem;
+
+  color: #222222;
+  font-size: 1.375rem;
+  font-weight: 500;
+
+  line-height: 2.5rem;
+  text-align: left;
+}
+
+.waitTime{
+  grid-area: time;
+
+  display: block;
+  width: calc(100% - 1rem);
+  height: 100%;
+
+  margin: 0;
+  padding: 0 0.5rem 0 0.5rem;
+
+  border-radius: 0 15px 15px 0;
+
+  color: #222222;
+  font-size: 2.75rem;
+  font-weight: 600;
+
+  line-height: 5rem;
+  text-align: center;
+}
+
+.waitTime::after{
+  content: "分";
+
+  display: inline-block;
+
+  color: #222222;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+#waitTime1{
+  background: url("../../test1.jpg") no-repeat center;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+#waitTime1:before{
+  content: '';
+  background: inherit;
+  filter: blur(4px);
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+}
+
+/* ======================================== */
+
+.classDesc{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+
+  width: 100%;
+  height: auto;
+
+  margin: 0;
+  padding: 1.5rem 0 2.5rem 0;
+
+  background-color: #ffffffcc;
+  backdrop-filter: blur(3px);
+
+  transform: translateY(100%);
+  transition: all .25s;
+}
+
+.classDesc.current{
+  transform: translateY(0);
+}
+
+.classDescClass{
+  display: block;
+
+  width: 70%;
+  height: 2rem;
+
+  margin: 0;
+  padding: 0 15%;
+
+  color: #222222;
+  font-size: 1.25rem;
+  font-weight: 400;
+
+  line-height: 2rem;
+  text-align: left;
+}
+
+.classDescTitle{
+  display: block;
+
+  width: 70%;
+  height: 2.5rem;
+
+  margin: 0;
+  padding: 0 15%;
+
+  color: #222222;
+  font-size: 1.75rem;
+  font-weight: 500;
+
+  line-height: 2.5rem;
+  text-align: left;
+}
+
+.classDescDesc{
+  display: block;
+
+  width: 70%;
+  height: calc(1.375rem * 15);
+
+  margin: 0;
+  padding: 1rem 15%;
+
+  color: #222222;
+  font-size: 1rem;
+  font-weight: 300;
+
+  line-height: 1.375rem;
+  text-align: left;
+}
+
+.classDescTimeContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  width: 70%;
+  height: 6rem;
+
+  margin: 0;
+  padding: 0 15%;
+}
+
+.classDescTimeContainer>div>p{
+  display: block;
+
+  margin: 0;
+  padding: 0;
+
+  color: #222222;
+  font-size: 1rem;
+  font-weight: 500;
+
+  line-height: 1.5rem;
+  text-align: left;
+}
+
+.classDescTimeContainer>div{
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  color: #222222;
+  font-size: 3.5rem;
+  font-weight: 600;
+
+  line-height: 4.5rem;
+  text-align: left;
+}
+
+.classDescGroupTime::after, .classDescWaitTime::after {
+  content: "分";
+
+  display: inline-block;
+
+  margin: 0 0.5rem;
+  padding: 0;
+
+  color: #222222;
+  font-size: 1.375rem;
+  font-weight: 500;
+
+  line-height: 6rem;
+  text-align: left;
+}
+
+/* ======================================== */
+
+#sectionGym{
+  width: 100%;
+
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.gymDateContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  width: 80%;
+  height: auto;
+
+  margin: 0 auto;
+  padding: 0;
+}
+
+.gymDateContainer>div{
+  display: grid;
+  grid-template-rows: 1.5fr 4fr 1fr 1.5fr;
+
+  width: 90%;
+  height: 8rem;
+
+  margin: auto;
+  padding: 0;
+  
+  border: none;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow:
+    7px 7px 25px #e6e6e6,
+    -7px -7px 25px #ffffff;
+}
+
+.gymDateContainer>div.active{
+  background: #f0f0f0;
+  box-shadow:
+    7px 7px 25px #dadada,
+    -7px -7px 25px #f0f0f0;
+}
+
+.gymDateContainer>div>h1{
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  color: #222222;
+  font-size: 4rem;
+  font-weight: 600;
+
+  line-height: calc(8rem / 8 * 4);
+  text-align: center;
+}
+
+.gymDateContainer>div>p{
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  color: #222222;
+  font-size: 0.875rem;
+  font-weight: 600;
+
+  line-height: calc(8rem / 8 * 1);
+  text-align: center;
+}
+
+.gymScheduleContainer{
+  display: none;
+
+  width: 100%;
+  height: auto;
+
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.gymScheduleContainer.active{
+  display: block;
+}
+
+.gymSchedule{
+  display: grid;
+  grid-template:
+    "time title" 1fr
+    "span desc" 5fr
+    / 1fr 5fr;
+
+  width: 70%;
+  height: 10rem;
+
+  margin: 0;
+  padding: 1rem 15%;
+}
+
+.gymSchedule:nth-of-type(2n+1){
+  background-color: #ffffff;
+}
+
+.gymSchedule:nth-of-type(2n){
+  background-color: #fafafa;
+}
+
+.gymSchedule.current{
+  background-color: #2ec8ee22;
+}
+
+.gymSchedule>h2{
+  grid-area: time;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  color: #222222;
+  font-size: 1.25rem;
+  font-weight: 400;
+
+  line-height: calc(10rem / 6 * 1);
+  text-align: center;
+}
+
+.gymSchedule>h1{
+  grid-area: title;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  color: #222222;
+  font-size: 1.25rem;
+  font-weight: 500;
+
+  line-height: calc(10rem / 6 * 1);
+  text-align: left;
+}
+
+.gymSchedule>p{
+  grid-area: desc;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  color: #222222;
+  font-size: 1rem;
+  font-weight: 500;
+
+  line-height: calc(10rem / 6 * 5 / 5);
+  text-align: left;
+}
+
+/* ======================================== */
+
+#currentTimeWindow{
+  position: fixed;
+  bottom: 0;
+  left: 10%;
+  z-index: 1;
+
+  display: grid;
+  grid-template:
+    "today time" 1fr
+    "remain remain" 1fr
+    / 1fr 1fr;
+
+
+  width: 80%;
+  height: auto;
+
+  background-color: #efefef;
+  border-radius: 10px 10px 0 0;
+}
+
+#currentTimeWindow>p{
+  display: block;
+
+  margin: 0;
+  padding: 1rem 0;
+
+  color: #222222;
+  font-size: 1.75rem;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+
+  line-height: 3rem;
+  text-align: center;
+}
+
+#currentDate{
+  grid-area: today;
+
+  width: 100%;
+  height: 3rem;
+}
+
+#currentTime{
+  grid-area: time;
+
+  width: 100%;
+  height: 3rem;
+}
+
+#remainingTime{
+  grid-area: remain;
+
+  width: 100%;
+  height: 3rem;
+}
+
+/* ======================================== */
+
+footer{
+  display: block;
+
+  width: 40%;
+  height: auto;
+
+  margin: 2rem 0 0 0;
+  padding: 0.5rem 30%;
+
+  background-color: #eaeaea;
+}
+
+#footerSNS{
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  margin: 1rem 0;
+}
+
+#SNSX, #SNSLink{
+  display: block;
+
+  width: 100%;
+
+  margin: 0 auto;
+
+  color: #222222;
+  font-size: 1rem;
+  font-weight: 400;
+
+  line-height: 2rem;
+  text-align: left;
+}
+
+#SNSX>a, #SNSLink>a{
+  color: #222222;
+
+  text-decoration: underline;
+}
+
+#copyright{
+  display: block;
+
+  width: 100%;
+
+  margin: 1rem 0;
+
+  color: #222222;
+  font-size: 0.875rem;
+  font-weight: 400;
+
+  line-height: 1.5rem;
+  text-align: center;
+}
