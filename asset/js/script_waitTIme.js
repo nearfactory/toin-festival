@@ -67,3 +67,27 @@ $("#waitClass7").click(function(){
     $("#classDesc7").addClass("current");
   }
 });
+
+$(".classDescClose").click(function(){
+  $(".classDesc").removeClass("current");
+})
+
+$("#navGym").click(function(){
+  $(".classDesc").removeClass("current");
+})
+
+$("#navMap").click(function(){
+  $(".classDesc").removeClass("current");
+})
+
+$("#navAboutUs").click(function(){
+  $(".classDesc").removeClass("current");
+})
+
+$(".classDescMapLink").click(function(){
+  $(".classDesc").removeClass("current");
+  $(".navItem").removeClass("current");
+  $("#navMap").addClass("current");
+  $(".section").removeClass("current");
+  $("#sectionMap").addClass("current");
+})

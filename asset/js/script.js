@@ -2,28 +2,28 @@
 $("#navWaitTime").click(function(){
   $(".navItem").removeClass("current");
   $("#navWaitTime").addClass("current");
-  $(".section").removeClass("current")
+  $(".section").removeClass("current");
   $("#sectionWaitTime").addClass("current");
 })
 
 $("#navGym").click(function(){
   $(".navItem").removeClass("current");
   $("#navGym").addClass("current");
-  $(".section").removeClass("current")
+  $(".section").removeClass("current");
   $("#sectionGym").addClass("current");
 })
 
 $("#navMap").click(function(){
   $(".navItem").removeClass("current");
   $("#navMap").addClass("current");
-  $(".section").removeClass("current")
+  $(".section").removeClass("current");
   $("#sectionMap").addClass("current");
 })
 
 $("#navAboutUs").click(function(){
   $(".navItem").removeClass("current");
   $("#navAboutUs").addClass("current");
-  $(".section").removeClass("current")
+  $(".section").removeClass("current");
   $("#sectionAboutUs").addClass("current");
 })
 
