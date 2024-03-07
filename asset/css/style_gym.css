@@ -8,40 +8,60 @@
   margin-bottom: 0;
 }
 
+#sectionGym>h1{
+  margin: 1rem 0 0 0;
+}
+
+#sectionGym>a{
+  display: block;
+
+  width: 100%;
+  height: 2rem;
+
+  margin: 0;
+  padding: 0;
+
+  color: #777777;
+  font-size: 1rem;
+  font-weight: 600;
+
+  line-height: 2rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+#sectionGym>a>i{
+  margin: 0 0.5rem 0 0;
+}
+
+/* ======================================== */
+
 .gymDateContainer{
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  width: 80%;
+  width: 40%;
   height: auto;
 
-  margin: 0 auto;
+  margin: 3rem auto 0 auto;
   padding: 0;
 }
 
 .gymDateContainer>div{
   display: grid;
-  grid-template-rows: 1.5fr 4fr 1fr 1.5fr;
+  grid-template-rows: 4fr 1fr 1.5fr;
 
   width: 90%;
-  height: 8rem;
+  height: 6rem;
 
   margin: auto;
   padding: 0;
-  
-  border: none;
-  border-radius: 10px;
-  background: #ffffff;
-  box-shadow:
-    7px 7px 25px #e6e6e6,
-    -7px -7px 25px #ffffff;
+
+  color: #777777;
 }
 
 .gymDateContainer>div.active{
-  background: #f1f1f1;
-  box-shadow:
-    7px 7px 25px #dadada,
-    -7px -7px 25px #f0f0f0;
+  color: #7FD9FB;
 }
 
 .gymDateContainer>div>h1{
@@ -53,12 +73,13 @@
   margin: 0;
   padding: 0;
 
-  color: #222222;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 600;
 
-  line-height: calc(8rem / 8 * 4);
+  line-height: calc(6rem / 8 * 4);
   text-align: center;
+  
+  transition: all .25s;
 }
 
 .gymDateContainer>div>p{
@@ -70,13 +91,35 @@
   margin: 0;
   padding: 0;
 
-  color: #222222;
   font-size: 0.875rem;
   font-weight: 600;
 
-  line-height: calc(8rem / 8 * 1);
+  line-height: calc(6rem / 8 * 1);
   text-align: center;
+
+  transition: all .25s;
 }
+
+.gymDateContainer>div>span{
+  display: block;
+
+  width: 2.5rem;
+  height: 100%;
+
+  margin: 0 auto;
+  padding: 0;
+
+  border-top: #7FD9FB 1px solid;
+
+  transform: scaleX(0);
+  transition: all .25s;
+}
+
+.gymDateContainer>div.active>span{
+  transform: scaleX(1);
+}
+
+/* ======================================== */
 
 .gymScheduleContainer{
   display: none;
@@ -84,7 +127,7 @@
   width: 100%;
   height: auto;
 
-  margin: 2rem 0 0;
+  margin: 0;
   padding: 0;
 }
 
@@ -93,34 +136,32 @@
 }
 
 .gymSchedule{
-  display: grid;
-  grid-template:
-    "time title" 1fr
-    "span desc" 5fr
-    / 1fr 5fr;
+  display: block;
 
-  width: 70%;
-  height: 10rem;
+  width: 65%;
+  height: auto;
+
+  margin: 1rem 5% 1rem 20%;
+  padding: 0.5rem 5% 0.5rem 5%;
+
+  background-color: #ffffff;
+  box-shadow: 5px 5px 10px #f1f1f1;
+
+  border-radius: 10px;
+}
+
+.gymScheduleMain{
+  display: grid;
+  grid-template-columns: 2fr 6fr 5fr;
+
+  width: 100%;
+  height: 3rem;
 
   margin: 0;
-  padding: 1rem 15%;
+  padding: 0;
 }
 
-.gymSchedule:nth-of-type(2n+1){
-  background-color: #ffffff;
-}
-
-.gymSchedule:nth-of-type(2n){
-  background-color: #f1f1f1;
-}
-
-.gymSchedule.current{
-  background-color: #7FD9FB66;
-}
-
-.gymSchedule>h2{
-  grid-area: time;
-
+.gymSchedule>div>h2{
   display: block;
 
   width: 100%;
@@ -133,13 +174,11 @@
   font-size: 1.25rem;
   font-weight: 400;
 
-  line-height: calc(10rem / 6 * 1);
+  line-height: 3rem;
   text-align: center;
 }
 
-.gymSchedule>h1{
-  grid-area: title;
-
+.gymSchedule>div>h1{
   width: 100%;
   height: 100%;
 
@@ -150,15 +189,39 @@
   font-size: 1.25rem;
   font-weight: 500;
 
-  line-height: calc(10rem / 6 * 1);
+  line-height: 3rem;
   text-align: left;
 }
 
-.gymSchedule>p{
-  grid-area: desc;
+.gymSchedule>div>h3{
+  display: block;
 
   width: 100%;
   height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  color: #777777;
+  font-size: 1rem;
+  font-weight: 400;
+
+  line-height: 3rem;
+  text-align: right;
+}
+
+.gymSchedule>img{
+  display: none;
+
+  width: 100%;
+  height: 7rem;
+}
+
+.gymSchedule>p{
+  display: none;
+
+  width: 100%;
+  height: 7.5rem;
 
   margin: 0;
   padding: 0;
@@ -167,6 +230,10 @@
   font-size: 1rem;
   font-weight: 500;
 
-  line-height: calc(10rem / 6 * 5 / 5);
+  line-height: 1.5rem;
   text-align: left;
+}
+
+.gymSchedule.active>p, .gymSchedule.active>img{
+  display: block;
 }
