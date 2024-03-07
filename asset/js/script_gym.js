@@ -11,3 +11,13 @@ $("#day2").click(function(){
   $("#day1").removeClass("active");
   $("#day2").addClass("active");
 })
+
+$(".gymSchedule").click(function(){
+  if($(this).hasClass("active")){
+    $(".gymSchedule").removeClass("active");
+  }
+  else{
+    $(".gymSchedule").removeClass("active");
+    $(this).addClass("active");
+  }
+})
