@@ -5,6 +5,7 @@
 
   margin-right: 0;
   margin-left: 0;
+  margin-bottom: 0;
 }
 
 .gymDateContainer{
@@ -37,7 +38,7 @@
 }
 
 .gymDateContainer>div.active{
-  background: #f0f0f0;
+  background: #f1f1f1;
   box-shadow:
     7px 7px 25px #dadada,
     -7px -7px 25px #f0f0f0;
@@ -83,7 +84,7 @@
   width: 100%;
   height: auto;
 
-  margin: 2rem 0;
+  margin: 2rem 0 0;
   padding: 0;
 }
 
@@ -110,11 +111,11 @@
 }
 
 .gymSchedule:nth-of-type(2n){
-  background-color: #fafafa;
+  background-color: #f1f1f1;
 }
 
 .gymSchedule.current{
-  background-color: #2ec8ee22;
+  background-color: #7FD9FB66;
 }
 
 .gymSchedule>h2{

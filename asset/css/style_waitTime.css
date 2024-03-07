@@ -129,7 +129,9 @@
   margin: 0;
   padding: 1.5rem 0 2.5rem 0;
 
-  background-color: #ffffffcc;
+  border-radius: 20px 20px 0 0;
+
+  background-color: #ffffff88;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
 
@@ -158,7 +160,7 @@
 .classDesc:before{
   content: '';
   background: inherit;
-  filter: blur(8px);
+  filter: blur(15px);
   position: absolute;
   top: -5px;
   left: -5px;
@@ -169,7 +171,7 @@
 
 .classDesc::after{
   content: '';
-  background: #ffffffbb;
+  background: #ffffff33;
   position: absolute;
   top: -5px;
   left: -5px;
@@ -195,7 +197,7 @@
   margin: 0;
   padding: 0;
 
-  color: #777777;
+  color: #d1d1d1;
   font-size: 1.5rem;
   font-weight: 500;
 
@@ -212,7 +214,7 @@
   margin: 0;
   padding: 0 15%;
 
-  color: #222222;
+  color: #f1f1f1;
   font-size: 1.25rem;
   font-weight: 400;
 
@@ -229,7 +231,7 @@
   margin: 0;
   padding: 0 15%;
 
-  color: #222222;
+  color: #f1f1f1;
   font-size: 1.75rem;
   font-weight: 500;
 
@@ -246,7 +248,7 @@
   margin: 0 15% 0.5rem 15%;
   padding: 0.25rem 0;
 
-  color: #777777;
+  color: #f1f1f1;
   font-size: 1.125rem;
   font-weight: 500;
 
@@ -259,7 +261,7 @@
   margin: 0 1rem 0 0;
 }
 
-.classDescDesc{
+/* .classDescDesc{
   display: block;
 
   width: 70%;
@@ -274,7 +276,7 @@
 
   line-height: 1.375rem;
   text-align: left;
-}
+} */
 
 .classDescTimeContainer{
   display: grid;
@@ -283,8 +285,15 @@
   width: 70%;
   height: 6rem;
 
-  margin: 0;
-  padding: 0 15%;
+  margin: 0 calc(15% - 1rem);
+  padding: 1rem;
+
+  background: #ffffff33;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px #0000001a;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid #ffffff4d;
 }
 
 .classDescTimeContainer>div>p{
@@ -293,12 +302,12 @@
   margin: 0;
   padding: 0;
 
-  color: #222222;
+  color: #f1f1f1;
   font-size: 1rem;
   font-weight: 500;
 
   line-height: 1.5rem;
-  text-align: left;
+  text-align: center;
 }
 
 .classDescTimeContainer>div{
@@ -310,12 +319,12 @@
   margin: 0;
   padding: 0;
 
-  color: #222222;
+  color: #f1f1f1;
   font-size: 3.5rem;
   font-weight: 600;
 
   line-height: 4.5rem;
-  text-align: left;
+  text-align: center;
 }
 
 .classDescGroupTime::after, .classDescWaitTime::after {
@@ -326,9 +335,9 @@
   margin: 0 0.5rem;
   padding: 0;
 
-  color: #222222;
-  font-size: 1.375rem;
-  font-weight: 500;
+  color: #f1f1f1;
+  font-size: 1rem;
+  font-weight: 400;
 
   line-height: 6rem;
   text-align: left;
