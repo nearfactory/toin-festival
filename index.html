@@ -33,8 +33,8 @@
 
       <nav>
         <span></span>
-        <div id="navWaitTime" class="navItem"><span></span><i class="fa-regular fa-clock"></i><p>待ち時間</p><span></span></div>
-        <div id="navGym" class="navItem current"><span></span><i class="fa-solid fa-dumbbell"></i><p>体育館</p><span></span></div>
+        <div id="navWaitTime" class="navItem current"><span></span><i class="fa-regular fa-clock"></i><p>待ち時間</p><span></span></div>
+        <div id="navGym" class="navItem"><span></span><i class="fa-solid fa-dumbbell"></i><p>体育館</p><span></span></div>
         <div id="navMap" class="navItem"><span></span><i class="fa-solid fa-map"></i><p>校内マップ</p><span></span></div>
         <div id="navAboutUs" class="navItem"><span></span><i class="fa-solid fa-circle-nodes"></i><p>制作者について</p><span></span></div>
         <span></span>
@@ -59,7 +59,7 @@
 
     <span id="topSpan"></span>
     
-    <div class="section" id="sectionWaitTime">
+    <div class="section current" id="sectionWaitTime">
       <h1>教室展示の待ち時間</h1>
       <div class="waitContainer" id="waitClass1">
         <h1 class="waitClass">2-A</h1>
@@ -95,6 +95,31 @@
         <p class="waitClass">2-G</p>
         <p class="waitTitle">今から出産します!!</p>
         <p class="waitTime" id="waitTime7">10</p>
+      </div>
+
+      <!-- <canvas id="waitTimeChart"></canvas> -->
+      <div id="waitTimeChart">
+        <h1>待ち時間を比較</h1>
+
+        <div id="data">
+          <span class="chartBar" id="chartBar1" time-label=""></span>
+          <span class="chartBar" id="chartBar2" time-label=""></span>
+          <span class="chartBar" id="chartBar3" time-label=""></span>
+          <span class="chartBar" id="chartBar4" time-label=""></span>
+          <span class="chartBar" id="chartBar5" time-label=""></span>
+          <span class="chartBar" id="chartBar6" time-label=""></span>
+          <span class="chartBar" id="chartBar7" time-label=""></span>
+        </div>
+
+        <div id="option">
+          <p class="chartOption" id="chartOption1">高2A</p>
+          <p class="chartOption" id="chartOption2">高2B</p>
+          <p class="chartOption" id="chartOption3">高2C</p>
+          <p class="chartOption" id="chartOption4">高2D</p>
+          <p class="chartOption" id="chartOption5">高2E</p>
+          <p class="chartOption" id="chartOption6">高2F</p>
+          <p class="chartOption" id="chartOption7">高2G</p>
+        </div>
       </div>
     </div>
 
@@ -182,7 +207,7 @@
       </div>
     </div>
 
-    <div class="section current" id="sectionGym">
+    <div class="section" id="sectionGym">
       <h1>出し物のスケジュール</h1>
       <a href="#"><i class="fa-solid fa-location-dot"></i>体育館</a>
 
@@ -194,6 +219,7 @@
       <div class="gymMainContainer active" id="scheduleDay1">
         <div class="lines">
           <span class="line" id="day1Line1"></span>
+          <span id="day1Point"></span>
           <span class="line" id="day1Line2"></span>
         </div>
         
