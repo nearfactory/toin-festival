@@ -32,31 +32,37 @@ for(var i=0; i<values.length; i++){
   var scheduleImg = document.createElement('img');
   var scheduleDesc = document.createElement('p');
   
-  scheduleBox.classList.add("schedule");
-  scheduleBox.setAttribute("id", "schedule" + String(i+1) + "Day1");
-  schedulesDay1.appendChild(scheduleBox);
-  
-  scheduleMainBox.classList.add("scheduleMain");
-  scheduleBox.appendChild(scheduleMainBox);
-  
-  scheduleTime.setAttribute("id", "scheduleTime" + String(i+1) + "Day1");
-  scheduleTime.textContent = values[i][0];
-  scheduleMainBox.appendChild(scheduleTime);
-  
-  scheduleTitle.setAttribute("id", "scheduleTitle" + String(i+1) + "Day1");
-  scheduleTitle.textContent = values[i][3];
-  scheduleMainBox.appendChild(scheduleTitle);
-  
-  scheduleCategory.setAttribute("id", "scheduleCategory" + String(i+1) + "Day1");
-  scheduleCategory.textContent = values[i][4];
-  scheduleMainBox.appendChild(scheduleCategory);
-  
-  scheduleImg.src = "./image/" + values[i][5];
-  scheduleBox.appendChild(scheduleImg);
-  
-  scheduleMainBox.classList.add("scheduleDesc");
-  scheduleDesc.textContent = values[i][6];
-  scheduleBox.appendChild(scheduleDesc);
+  if(values[i][2] != "###"){
+    scheduleBox.classList.add("schedule");
+    scheduleBox.setAttribute("id", "schedule" + String(i+1) + "Day1");
+    schedulesDay1.appendChild(scheduleBox);
+    
+    scheduleMainBox.classList.add("scheduleMain");
+    scheduleBox.appendChild(scheduleMainBox);
+    
+    scheduleTime.setAttribute("id", "scheduleTime" + String(i+1) + "Day1");
+    scheduleTime.textContent = values[i][0];
+    scheduleMainBox.appendChild(scheduleTime);
+    
+    scheduleTitle.setAttribute("id", "scheduleTitle" + String(i+1) + "Day1");
+    scheduleTitle.textContent = values[i][3];
+    scheduleMainBox.appendChild(scheduleTitle);
+    
+    scheduleCategory.setAttribute("id", "scheduleCategory" + String(i+1) + "Day1");
+    scheduleCategory.textContent = values[i][4];
+    scheduleMainBox.appendChild(scheduleCategory);
+    
+    scheduleImg.src = "./image/" + values[i][5];
+    scheduleBox.appendChild(scheduleImg);
+    
+    scheduleMainBox.classList.add("scheduleDesc");
+    scheduleDesc.textContent = values[i][6];
+    scheduleBox.appendChild(scheduleDesc);
+  }
+  else{
+    scheduleBox.classList.add("scheduleSpan");
+    schedulesDay1.appendChild(scheduleBox);
+  }
 }
 
 
@@ -84,27 +90,38 @@ $("#day2").click(function(){
 })
 
 $(".schedule").click(function(){
-  // if($(this).hasClass("active")){
-  //   $(this).removeClass("active");
-  //   activeCount -= 1;
-  // }
-  // else{
-  //   $(this).addClass("active");
-  //   activeCount += 1;
-  // }
-  $(this).toggleClass("active");
+  if($(this).hasClass("active")){
+    $(this).removeClass("active");
+    activeCount -= 1;
+  }
+  else{
+    $(this).addClass("active");
+    activeCount += 1;
+  }
+  // $(this).toggleClass("active");
 })
 
+var firstHeight;
+
+$("#navGym").click(function(){
+  firstHeight = document.getElementById("schedulesDay1").clientHeight;
+  
+  setInterval(timeCalc, 10);
+});
+
 function timeCalc(){
-  var start = new Date("2024-03-09 09:00:00");
-  var end = new Date("2024-03-09 17:00:00");
+  var start = new Date("2024-03-10 09:00:00");
+  var end = new Date("2024-03-11 18:00:00");
   var now = new Date();
 
   var festivalTime = end.getTime() - start.getTime();
   var festivalNowTime = now.getTime() - start.getTime();
 
-  $("#day1Line1").css("height", "calc(" + String(festivalNowTime / festivalTime * 100) + "% + " + String(activeCount * 7) + "rem)");
-  $("#day1Line2").css("height", "calc(" + String(100 - festivalNowTime / festivalTime * 100) + "% - " + String(activeCount * 7) + "rem)");
-}
+  var nowProportion = festivalNowTime / festivalTime
+  nowProportion = nowProportion > 1 ? 1 : nowProportion;
+  nowProportion = nowProportion < 0 ? 0 : nowProportion;
 
-setInterval(timeCalc, 10);
+
+  $("#day1Line1").css("height", "calc(" + String(firstHeight) + "px *" + String(nowProportion) + ")");
+  $("#day1Line2").css("height", "calc(" + String(firstHeight) + "px *" + String(1-nowProportion) + " + " + String(activeCount*14.5) + "rem)");
+}
