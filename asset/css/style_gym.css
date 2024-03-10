@@ -40,7 +40,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  width: 40%;
+  width: 55%;
   height: auto;
 
   margin: 1.5rem auto 0 auto;
@@ -123,7 +123,7 @@
 
 .gymMainContainer{
   display: none;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 7fr;
 
   width: 100%;
   height: auto;
@@ -141,25 +141,43 @@
 .gymMainContainer>.lines{
   display: block;
 
-  width: 2px;
+  width: 100%;
   height: 100%;
 
-  margin: 0 50%;
+  margin: 0;
   padding: 0;
+
+  overflow: hidden;
 }
 
 .gymMainContainer>.lines>.line{
   display: block;
 
   width: 2px;
-  height: 100%;
+  height: 50%;
 
-  margin: 0;
+  margin: 0 50%;
   padding: 0;
 }
 
 #day1Line1{
   background-color: #7FD9FB;
+}
+
+#day1Point{
+  display: block;
+
+  float: left;
+
+  width: 0.75rem;
+  height: 0.75rem;
+
+  margin: 0 calc(50% - 0.375rem + 0.5px);
+  padding: 0;
+
+  background-color: #7FD9FB;
+  
+  border-radius: 50%;
 }
 
 #day1Line2{
@@ -193,7 +211,7 @@
   content: "";
 
   position: absolute;
-  left: calc(10% - 0.5rem);
+  left: calc(100% / 8 / 2 - 0.5rem);
   z-index: 1;
 
   display: block;
@@ -222,7 +240,7 @@
 
 .scheduleMain{
   display: grid;
-  grid-template-columns: 2fr 6fr 5fr;
+  grid-template-columns: 2fr 7fr 3.5fr;
 
   width: 100%;
   height: 3rem;
@@ -318,4 +336,16 @@
 
 .schedule.active>p, .schedule.active>img{
   transform: scaleY(1);
+}
+
+.scheduleSpan{
+  display: block;
+
+  width: calc(100% - 6.25% - 2rem);
+  height: 3rem;
+
+  margin: 1rem auto 1rem 0;
+  padding: 0 1rem;
+
+  background-color: #ffffff;
 }
