@@ -16,6 +16,7 @@
     <link href="./asset/css/style.css" rel="stylesheet">
     <link href="./asset/css/style_waitTime.css" rel="stylesheet">
     <link href="./asset/css/style_gym.css" rel="stylesheet">
+    <link href="./asset/css/style_news.css" rel="stylesheet">
     <link href="./asset/css/style_aboutUs.css" rel="stylesheet">
 
     <!--googleFontsの読み込み-->
@@ -36,6 +37,7 @@
         <div id="navWaitTime" class="navItem current"><span></span><i class="fa-regular fa-clock"></i><p>待ち時間</p><span></span></div>
         <div id="navGym" class="navItem"><span></span><i class="fa-solid fa-dumbbell"></i><p>体育館</p><span></span></div>
         <div id="navMap" class="navItem"><span></span><i class="fa-solid fa-map"></i><p>校内マップ</p><span></span></div>
+        <div id="navNews" class="navItem"><span></span><i class="fa-solid fa-newspaper"></i><p>ニュース</p><span></span></div>
         <div id="navAboutUs" class="navItem"><span></span><i class="fa-solid fa-circle-nodes"></i><p>制作者について</p><span></span></div>
         <span></span>
       </nav>
@@ -61,69 +63,110 @@
     
     <div class="section current" id="sectionWaitTime">
       <h1>教室展示の待ち時間</h1>
+      <h2>中学生の部</h2>
       <div class="waitContainer" id="waitClass1">
-        <h1 class="waitClass">2-A</h1>
+        <h1>2-A</h1>
+        <p class="waitTitle">タイトル</p>
+        <p class="waitTime" id="waitTime1">60</p>
+      </div>
+      <div class="waitContainer" id="waitClass2">
+        <h1>2-B</h1>
+        <p class="waitTitle">タイトル</p>
+        <p class="waitTime" id="waitTime2">60</p>
+      </div>
+      <h2>高校生の部</h2>
+      <div class="waitContainer" id="waitClass3">
+        <h1>2-A</h1>
         <p class="waitTitle">あっぱれ、ふじキング!!!</p>
         <p class="waitTime" id="waitTime1">15</p>
       </div>
-      <div class="waitContainer" id="waitClass2">
-        <h1 class="waitClass">2-B</h1>
+      <div class="waitContainer" id="waitClass4">
+        <h1>2-B</h1>
         <p class="waitTitle">ライス、おかわりせぇへん?</p>
         <p class="waitTime" id="waitTime2">20</p>
       </div>
-      <div class="waitContainer" id="waitClass3">
-        <h1 class="waitClass">2-C</h1>
+      <div class="waitContainer" id="waitClass5">
+        <h1>2-C</h1>
         <p class="waitTitle">ええやろ、これ。俺もすっきゃねん。</p>
         <p class="waitTime" id="waitTime3">0</p>
       </div>
-      <div class="waitContainer" id="waitClass4">
-        <h1 class="waitClass">2-D</h1>
+      <div class="waitContainer" id="waitClass6">
+        <h1>2-D</h1>
         <p class="waitTitle">The Teacher -named MOEKA-</p>
         <p class="waitTime" id="waitTime4">10</p>
       </div>
-      <div class="waitContainer" id="waitClass5">
-        <h1 class="waitClass">2-E</h1>
+      <div class="waitContainer" id="waitClass7">
+        <h1>2-E</h1>
         <p class="waitTitle">りんちゃん部長によろしく！</p>
         <p class="waitTime" id="waitTime5">35</p>
       </div>
-      <div class="waitContainer" id="waitClass6">
-        <h1 class="waitClass">2-F</h1>
+      <div class="waitContainer" id="waitClass8">
+        <h1>2-F</h1>
         <p class="waitTitle">ここからの生き方を教えてください!!</p>
         <p class="waitTime" id="waitTime6">5</p>
       </div>
-      <div class="waitContainer" id="waitClass7">
-        <p class="waitClass">2-G</p>
+      <div class="waitContainer" id="waitClass9">
+        <h1>2-G</h1>
         <p class="waitTitle">今から出産します!!</p>
         <p class="waitTime" id="waitTime7">10</p>
       </div>
 
       <!-- <canvas id="waitTimeChart"></canvas> -->
       <div id="waitTimeChart">
-        <h1>待ち時間を比較</h1>
+        <h1>待ち時間比較</h1>
 
-        <div id="data">
-          <span class="chartBar" id="chartBar1" time-label=""></span>
-          <span class="chartBar" id="chartBar2" time-label=""></span>
-          <span class="chartBar" id="chartBar3" time-label=""></span>
-          <span class="chartBar" id="chartBar4" time-label=""></span>
-          <span class="chartBar" id="chartBar5" time-label=""></span>
-          <span class="chartBar" id="chartBar6" time-label=""></span>
-          <span class="chartBar" id="chartBar7" time-label=""></span>
-        </div>
-
-        <div id="option">
-          <p class="chartOption" id="chartOption1">高2A</p>
-          <p class="chartOption" id="chartOption2">高2B</p>
-          <p class="chartOption" id="chartOption3">高2C</p>
-          <p class="chartOption" id="chartOption4">高2D</p>
-          <p class="chartOption" id="chartOption5">高2E</p>
-          <p class="chartOption" id="chartOption6">高2F</p>
-          <p class="chartOption" id="chartOption7">高2G</p>
+        <div>
+          <div id="option">
+            <p class="chartOption" id="chartOption1">中2-A</p>
+            <p class="chartOption" id="chartOption2">B</p>
+            <p class="chartOption" id="chartOption3">高2-A</p>
+            <p class="chartOption" id="chartOption4">B</p>
+            <p class="chartOption" id="chartOption5">C</p>
+            <p class="chartOption" id="chartOption6">D</p>
+            <p class="chartOption" id="chartOption7">E</p>
+            <p class="chartOption" id="chartOption8">F</p>
+            <p class="chartOption" id="chartOption9">G</p>
+          </div>
+          <div id="data">
+            <span class="chartBar" id="chartBar1"></span>
+            <span class="chartBar" id="chartBar2"></span>
+            <span class="chartBar" id="chartBar3"></span>
+            <span class="chartBar" id="chartBar4"></span>
+            <span class="chartBar" id="chartBar5"></span>
+            <span class="chartBar" id="chartBar6"></span>
+            <span class="chartBar" id="chartBar7"></span>
+            <span class="chartBar" id="chartBar8"></span>
+            <span class="chartBar" id="chartBar9"></span>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="classDesc" id="classDesc1">
+      <div class="classDescClose"><i class="fa-solid fa-angles-down"></i></div>
+      <p class="classDescClass">2-A</p>
+      <p class="classDescTitle">タイトル</p>
+      <a href="#" class="classDescMapLink"><i class="fa-solid fa-location-dot"></i>2棟2階 2-A教室</a>
+      <div class="classDescTimeContainer">
+        <div class="classDescGroupTime"><p>体験所要時間</p>99</div>
+        <div class="classDescWaitTime"><p>待ち時間</p>99</div>
+        <div class="classDescEstimatedTime"><p>予定案内時刻</p>08:10</div>
+      </div>
+    </div>
+
+    <div class="classDesc" id="classDesc2">
+      <div class="classDescClose"><i class="fa-solid fa-angles-down"></i></div>
+      <p class="classDescClass">2-A</p>
+      <p class="classDescTitle">タイトル</p>
+      <a href="#" class="classDescMapLink"><i class="fa-solid fa-location-dot"></i>2棟2階 2-A教室</a>
+      <div class="classDescTimeContainer">
+        <div class="classDescGroupTime"><p>体験所要時間</p>99</div>
+        <div class="classDescWaitTime"><p>待ち時間</p>99</div>
+        <div class="classDescEstimatedTime"><p>予定案内時刻</p>08:10</div>
+      </div>
+    </div>
+
+    <div class="classDesc" id="classDesc3">
       <div class="classDescClose"><i class="fa-solid fa-angles-down"></i></div>
       <p class="classDescClass">2-A</p>
       <p class="classDescTitle">あっぱれ、ふじキング!!!</p>
@@ -135,7 +178,7 @@
       </div>
     </div>
 
-    <div class="classDesc" id="classDesc2">
+    <div class="classDesc" id="classDesc4">
       <div class="classDescClose"><i class="fa-solid fa-angles-down"></i></div>
       <p class="classDescClass">2-B</p>
       <p class="classDescTitle">タイトル</p>
@@ -147,7 +190,7 @@
       </div>
     </div>
 
-    <div class="classDesc" id="classDesc3">
+    <div class="classDesc" id="classDesc5">
       <div class="classDescClose"><i class="fa-solid fa-angles-down"></i></div>
       <p class="classDescClass">2-C</p>
       <p class="classDescTitle">タイトル</p>
@@ -159,7 +202,7 @@
       </div>
     </div>
 
-    <div class="classDesc" id="classDesc4">
+    <div class="classDesc" id="classDesc6">
       <div class="classDescClose"><i class="fa-solid fa-angles-down"></i></div>
       <p class="classDescClass">2-D</p>
       <p class="classDescTitle">タイトル</p>
@@ -171,7 +214,7 @@
       </div>
     </div>
 
-    <div class="classDesc" id="classDesc5">
+    <div class="classDesc" id="classDesc7">
       <div class="classDescClose"><i class="fa-solid fa-angles-down"></i></div>
       <p class="classDescClass">2-E</p>
       <p class="classDescTitle">タイトル</p>
@@ -183,7 +226,7 @@
       </div>
     </div>
 
-    <div class="classDesc" id="classDesc6">
+    <div class="classDesc" id="classDesc8">
       <div class="classDescClose"><i class="fa-solid fa-angles-down"></i></div>
       <p class="classDescClass">2-F</p>
       <p class="classDescTitle">タイトル</p>
@@ -195,7 +238,7 @@
       </div>
     </div>
 
-    <div class="classDesc" id="classDesc7">
+    <div class="classDesc" id="classDesc9">
       <div class="classDescClose"><i class="fa-solid fa-angles-down"></i></div>
       <p class="classDescClass">2-G</p>
       <p class="classDescTitle">タイトル</p>
@@ -219,17 +262,35 @@
       <div class="gymMainContainer active" id="scheduleDay1">
         <div class="lines">
           <span class="line" id="day1Line1"></span>
-          <span id="day1Point"></span>
+          <span class="point" id="day1Point"></span>
           <span class="line" id="day1Line2"></span>
         </div>
         
         <div id="schedulesDay1">
         </div>
       </div>
+
+      <div class="gymMainContainer" id="scheduleDay2">
+        <div class="lines">
+          <span class="line" id="day2Line1"></span>
+          <span class="point" id="day2Point"></span>
+          <span class="line" id="day2Line2"></span>
+        </div>
+        
+        <div id="schedulesDay2">
+        </div>
+      </div>
     </div>
 
     <div class="section" id="sectionMap">
       <h1>校内マップ</h1>
+    </div>
+
+    <div class="section" id="sectionNews">
+      <h1>ニュース</h1>
+
+      <div id="newsContainer">
+      </div>
     </div>
     
     <div class="section" id="sectionAboutUs">
@@ -264,19 +325,13 @@
       <p class="sns"><i class="fa-solid fa-link"></i><a href="https://wakayama-space.org/">https://wakayama-space.org/</a></p>
     </div>
 
-    <!-- <div id="currentTimeWindow">
-      <p id="currentDate"></p>
-      <p id="currentTime"></p>
-      <p id="remainingTime"></p>
-    </div> -->
-
     <footer>
       <p id="copyright">
         Copyright &copy; 2024 Toin Science Club
       </p>
     </footer>
 
-    <div id="access">
+    <!-- <div id="access">
       <form>
         <input type="text" id="accessID" placeholder="アクセスID">
         <br>
@@ -294,12 +349,13 @@
       <br>
       <br>
       <button id="accessBtn">認証</button>
-    </div>
+    </div> -->
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity = "sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin = "anonymous"></script>
-    <script src="./asset/js/access.js"></script>
+    <!-- <script src="./asset/js/access.js"></script> -->
     <script src="./asset/js/script.js"></script>
     <script src="./asset/js/script_waitTIme.js"></script>
     <script src="./asset/js/script_gym.js"></script>
+    <script src="./asset/js/script_news.js"></script>
   </body>
 </html>
