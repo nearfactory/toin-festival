@@ -1,4 +1,4 @@
-/* ページ上部ナビバーの挙動 */
+// ========================================
 $("#navWaitTime").click(function(){
   $(".navItem").removeClass("current");
   $("#navWaitTime").addClass("current");
@@ -20,6 +20,13 @@ $("#navMap").click(function(){
   $("#sectionMap").addClass("current");
 })
 
+$("#navNews").click(function(){
+  $(".navItem").removeClass("current");
+  $("#navNews").addClass("current");
+  $(".section").removeClass("current");
+  $("#sectionNews").addClass("current");
+})
+
 $("#navAboutUs").click(function(){
   $(".navItem").removeClass("current");
   $("#navAboutUs").addClass("current");
@@ -37,9 +44,7 @@ $(".navLink").click(function(){
   $("nav").removeClass("active");
 });
 
-
-
-
+// ========================================
 
 /* 現在時刻表示の挙動 */
 // function updateDate(){

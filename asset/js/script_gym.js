@@ -1,4 +1,7 @@
-/* Load schedules from CSV */
+// Load schedules from CSV
+
+var day1 = [];
+var day2 = [];
 
 function getCSV(url){
   var req = new XMLHttpRequest();
@@ -7,8 +10,6 @@ function getCSV(url){
 
   return convertCSVtoArray(req.responseText);
 }
-
-var values = [];
 
 function convertCSVtoArray(str){
   var result = [];
@@ -19,9 +20,12 @@ function convertCSVtoArray(str){
   return result;
 }
 
-values = getCSV("./asset/csv/day1.csv");
+// ========================================
 
-for(var i=0; i<values.length; i++){
+day1 = getCSV("./asset/csv/day1.csv");
+day2 = getCSV("./asset/csv/day2.csv");
+
+for(var i=0; i<day1.length; i++){
   var schedulesDay1 = document.getElementById("schedulesDay1");
 
   var scheduleBox = document.createElement('div');
@@ -32,7 +36,7 @@ for(var i=0; i<values.length; i++){
   var scheduleImg = document.createElement('img');
   var scheduleDesc = document.createElement('p');
   
-  if(values[i][2] != "###"){
+  if(day1[i][2] != "###"){
     scheduleBox.classList.add("schedule");
     scheduleBox.setAttribute("id", "schedule" + String(i+1) + "Day1");
     schedulesDay1.appendChild(scheduleBox);
@@ -41,22 +45,22 @@ for(var i=0; i<values.length; i++){
     scheduleBox.appendChild(scheduleMainBox);
     
     scheduleTime.setAttribute("id", "scheduleTime" + String(i+1) + "Day1");
-    scheduleTime.textContent = values[i][0];
+    scheduleTime.textContent = day1[i][0];
     scheduleMainBox.appendChild(scheduleTime);
     
     scheduleTitle.setAttribute("id", "scheduleTitle" + String(i+1) + "Day1");
-    scheduleTitle.textContent = values[i][3];
+    scheduleTitle.textContent = day1[i][3];
     scheduleMainBox.appendChild(scheduleTitle);
     
     scheduleCategory.setAttribute("id", "scheduleCategory" + String(i+1) + "Day1");
-    scheduleCategory.textContent = values[i][4];
+    scheduleCategory.textContent = day1[i][4];
     scheduleMainBox.appendChild(scheduleCategory);
     
-    scheduleImg.src = "./image/" + values[i][5];
+    scheduleImg.src = "./image/" + day1[i][5];
     scheduleBox.appendChild(scheduleImg);
     
     scheduleMainBox.classList.add("scheduleDesc");
-    scheduleDesc.textContent = values[i][6];
+    scheduleDesc.textContent = day1[i][6];
     scheduleBox.appendChild(scheduleDesc);
   }
   else{
@@ -65,21 +69,58 @@ for(var i=0; i<values.length; i++){
   }
 }
 
+for(var i=0; i<day2.length; i++){
+  var schedulesDay2 = document.getElementById("schedulesDay2");
 
+  var scheduleBox = document.createElement('div');
+  var scheduleMainBox = document.createElement('div');
+  var scheduleTime = document.createElement('h2');
+  var scheduleTitle = document.createElement('h1');
+  var scheduleCategory = document.createElement('h3');
+  var scheduleImg = document.createElement('img');
+  var scheduleDesc = document.createElement('p');
+  
+  if(day2[i][2] != "###"){
+    scheduleBox.classList.add("schedule");
+    scheduleBox.setAttribute("id", "schedule" + String(i+1) + "Day2");
+    schedulesDay2.appendChild(scheduleBox);
+    
+    scheduleMainBox.classList.add("scheduleMain");
+    scheduleBox.appendChild(scheduleMainBox);
+    
+    scheduleTime.setAttribute("id", "scheduleTime" + String(i+1) + "Day2");
+    scheduleTime.textContent = day2[i][0];
+    scheduleMainBox.appendChild(scheduleTime);
+    
+    scheduleTitle.setAttribute("id", "scheduleTitle" + String(i+1) + "Day2");
+    scheduleTitle.textContent = day2[i][3];
+    scheduleMainBox.appendChild(scheduleTitle);
+    
+    scheduleCategory.setAttribute("id", "scheduleCategory" + String(i+1) + "Day2");
+    scheduleCategory.textContent = day2[i][4];
+    scheduleMainBox.appendChild(scheduleCategory);
+    
+    scheduleImg.src = "./image/" + day2[i][5];
+    scheduleBox.appendChild(scheduleImg);
+    
+    scheduleMainBox.classList.add("scheduleDesc");
+    scheduleDesc.textContent = day2[i][6];
+    scheduleBox.appendChild(scheduleDesc);
+  }
+  else{
+    scheduleBox.classList.add("scheduleSpan");
+    schedulesDay2.appendChild(scheduleBox);
+  }
+}
 
-
-
-
-
-
-
-var activeCount = 0;
+// ========================================
 
 $("#day1").click(function(){
   $("#scheduleDay2").removeClass("active");
   $("#scheduleDay1").addClass("active");
   $("#day2").removeClass("active");
   $("#day1").addClass("active");
+  firstHeight1 = document.getElementById("schedulesDay1").clientHeight;
 });
 
 $("#day2").click(function(){
@@ -87,9 +128,14 @@ $("#day2").click(function(){
   $("#scheduleDay2").addClass("active");
   $("#day1").removeClass("active");
   $("#day2").addClass("active");
+  firstHeight2 = document.getElementById("schedulesDay2").clientHeight;
 })
 
-$(".schedule").click(function(){
+//★★★
+//あまりよろしくないやり方らしいから修正必要かも
+//（DOM要素をJSで追加した場合、jQueryからはクリックイベントに対応できない）
+
+$(document).on("click", ".schedule", function () {
   if($(this).hasClass("active")){
     $(this).removeClass("active");
     activeCount -= 1;
@@ -98,30 +144,74 @@ $(".schedule").click(function(){
     $(this).addClass("active");
     activeCount += 1;
   }
-  // $(this).toggleClass("active");
-})
-
-var firstHeight;
-
-$("#navGym").click(function(){
-  firstHeight = document.getElementById("schedulesDay1").clientHeight;
-  
-  setInterval(timeCalc, 10);
 });
 
+
+
+// ========================================
+
+var activeCount = 0;
+var firstHeight1;
+var firstHeight2;
+
 function timeCalc(){
-  var start = new Date("2024-03-10 09:00:00");
-  var end = new Date("2024-03-11 18:00:00");
-  var now = new Date();
+  var day1Start = new Date("2024-03-10 09:00:00").getTime();
+  var day1End = new Date("2024-03-10 18:00:00").getTime();
+  var day2Start = new Date("2024-03-11 09:00:00").getTime();
+  var day2End = new Date("2024-03-11 18:00:00").getTime();
+  var now = new Date().getTime();
 
-  var festivalTime = end.getTime() - start.getTime();
-  var festivalNowTime = now.getTime() - start.getTime();
+  var day1Time = day1End - day1Start;
+  var day2Time = day2End - day2Start;
 
-  var nowProportion = festivalNowTime / festivalTime
-  nowProportion = nowProportion > 1 ? 1 : nowProportion;
-  nowProportion = nowProportion < 0 ? 0 : nowProportion;
+  var nowP1;
+  var nowP2;
 
+  if(now < day1Start){
+    var nowP1 = 0;
+    var nowP2 = 0;
+    $("#day1Point").removeClass("completed");
+    $("#day12oint").removeClass("completed");
+    // console.log("haven't started");
+  }
+  else if(day1Start <= now && now <= day1End){
+    var nowP1 = (now - day1Start) / day1Time;
+    var nowP2 = 0;
+    $("#day1Point").removeClass("completed");
+    $("#day12oint").removeClass("completed");
+    // console.log("day1");
+  }
+  else if(day1End < now && now < day2Start){
+    var nowP1 = 1;
+    var nowP2 = 0;
+    $("#day1Point").addClass("completed");
+    $("#day12oint").removeClass("completed");
+    // console.log("between day1 & day2");
+  }
+  else if(day2Start <= now && now <= day2End){
+    var nowP1 = 1;
+    var nowP2 = (now - day2Start) / day2Time;
+    $("#day1Point").addClass("completed");
+    $("#day12oint").removeClass("completed");
+    // console.log("day2");
+  }
+  else{
+    var nowP1 = 1;
+    var nowP2 = 1;
+    $("#day1Point").addClass("completed");
+    $("#day2Point").addClass("completed");
+    // console.log("ended");
+  }
 
-  $("#day1Line1").css("height", "calc(" + String(firstHeight) + "px *" + String(nowProportion) + ")");
-  $("#day1Line2").css("height", "calc(" + String(firstHeight) + "px *" + String(1-nowProportion) + " + " + String(activeCount*14.5) + "rem)");
+  // console.log(nowP1);
+  // console.log(nowP2);
+
+  $("#day1Line1").css("height", "calc(" + String(firstHeight1) + "px *" + String(nowP1) + ")");
+  $("#day1Line2").css("height", "calc(" + String(firstHeight1) + "px *" + String(1-nowP1) + " + " + String(activeCount*14.5) + "rem)");
+
+  $("#day2Line1").css("height", "calc(" + String(firstHeight2) + "px *" + String(nowP2) + ")");
+  $("#day2Line2").css("height", "calc(" + String(firstHeight2) + "px *" + String(1-nowP2) + " + " + String(activeCount*14.5) + "rem)");
 }
+
+
+setInterval(timeCalc, 10);
