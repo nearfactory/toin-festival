@@ -1,5 +1,15 @@
 @charset "utf-8";
 
+:root{
+  --background1: #ffffff;
+  --background2: #f1f1f1;
+  --background3: #f9f9f9;
+  --text: #222222;
+  --textPale: #777777;
+
+  --accent: #7FD9FB;
+}
+
 #sectionGym{
   width: 100%;
 
@@ -21,7 +31,7 @@
   margin: 0;
   padding: 0;
 
-  color: #777777;
+  color: var(--textPale);
   font-size: 1rem;
   font-weight: 600;
 
@@ -57,11 +67,11 @@
   margin: auto;
   padding: 0;
 
-  color: #777777;
+  color: var(--textPale);
 }
 
 .gymDateContainer>div.active{
-  color: #7FD9FB;
+  color: var(--accent);
 }
 
 .gymDateContainer>div>h1{
@@ -109,7 +119,7 @@
   margin: 0 auto;
   padding: 0;
 
-  border-top: #7FD9FB 1px solid;
+  border-top: var(--accent) 1px solid;
 
   transform: scaleX(0);
   transition: all .25s;
@@ -161,7 +171,7 @@
 }
 
 #day1Line1, #day2Line1{
-  background-color: #7FD9FB;
+  background-color: var(--accent);
 }
 
 .point{
@@ -175,7 +185,7 @@
   margin: 0 calc(50% - 0.375rem + 0.5px);
   padding: 0;
 
-  background-color: #7FD9FB;
+  background-color: var(--accent);
   
   border-radius: 50%;
 }
@@ -204,10 +214,10 @@
   padding: 0 1rem;
 
   border-radius: 10px;
-  background: linear-gradient(225deg, #f9f9f9, #ffffff);
+  background: linear-gradient(225deg, var(--background3), var(--background1));
   box-shadow:
-    -15px 15px 30px #f1f1f1,
-    15px -15px 30px #ffffff;
+    -15px 15px 30px var(--background2),
+    15px -15px 30px var(--background1);
 
   transition: all .25s;
 }
@@ -227,16 +237,16 @@
   margin: 1.5rem 0;
   padding: 0;
 
-  background-color: #ffffff;
+  background-color: var(--background1);
 
-  border: #7FD9FB 1px solid;
+  border: var(--accent) 1px solid;
   border-radius: 50%;
 
   transition: all .25s;
 }
 
 .schedule.active::before{
-  background-color: #7FD9FB;
+  background-color: var(--accent);
 }
 
 .schedule.active{
@@ -245,7 +255,7 @@
 
 .scheduleMain{
   display: grid;
-  grid-template-columns: 2fr 7.5fr 2.5fr;
+  grid-template-columns: 2fr 6.5fr 3.5fr;
 
   width: 100%;
   height: 3rem;
@@ -263,7 +273,7 @@
   margin: 0;
   padding: 0;
 
-  color: #222222;
+  color: var(--text);
   font-size: 1.25rem;
   font-weight: 400;
 
@@ -278,7 +288,7 @@
   margin: 0;
   padding: 0;
 
-  color: #222222;
+  color: var(--text);
   font-size: 1.25rem;
   font-weight: 500;
 
@@ -295,7 +305,7 @@
   margin: 0;
   padding: 0;
 
-  color: #777777;
+  color: var(--textPale);
   font-size: 1rem;
   font-weight: 400;
 
@@ -313,7 +323,7 @@
   margin: 0;
   padding: 0;
 
-  color: #777777;
+  color: var(--textPale);
   font-family: "Font Awesome 6 Free";
   font-size: 1.125rem;
   font-weight: 900;
@@ -349,7 +359,7 @@
   margin: 0;
   padding: 0;
 
-  color: #222222;
+  color: var(--text);
   font-size: 1rem;
   font-weight: 500;
 

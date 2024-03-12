@@ -1,26 +1,15 @@
 @charset "utf-8";
 
+:root{
+  --text: #222222;
+
+  --accent: #7FD9FB;
+}
+
 #sectionAboutUs{
   width: 55%;
 
   margin: 2rem auto;
-}
-
-#sectionAboutUs>h1{
-  display: block;
-
-  width: 100%;
-  height: 3rem;
-
-  margin: 0;
-  padding: 0;
-
-  color: #222222;
-  font-size: 1.5rem;
-  font-weight: 500;
-
-  line-height: 3rem;
-  text-align: left;
 }
 
 #sectionAboutUs>#aboutUsThank{
@@ -32,7 +21,7 @@
   margin: 0;
   padding: 0;
 
-  color: #222222;
+  color: var(--text);
   font-size: 1rem;
   font-weight: 400;
 
@@ -49,7 +38,7 @@
   margin: 2rem auto;
   padding: 0;
 
-  border-top: #7FD9FB 1px solid;
+  border-top: var(--accent) 1px solid;
 }
 
 /* ======================================== */
@@ -64,7 +53,7 @@
   width: 100%;
   height: 8rem;
 
-  margin: 1.5rem 0;
+  margin: 2.5rem 0;
   padding: 0;
 }
 
@@ -95,7 +84,7 @@
   margin: 0 0 0 1.5rem;
   padding: 0;
 
-  color: #222222;
+  color: var(--text);
   font-size: 1.25rem;
   font-weight: 400;
 
@@ -114,7 +103,7 @@
   margin: 0.5rem 0 0 1.5rem;
   padding: 0;
 
-  color: #222222;
+  color: var(--text);
   font-size: 0.875rem;
   font-weight: 400;
 
@@ -135,13 +124,13 @@
 }
 
 #sectionAboutUs>.sns>i{
-  color: #222222;
+  color: var(--text);
   font-size: 1.25rem;
   margin: 0 1rem 0 0;
 }
 
 #sectionAboutUs>.sns>a{
-  color: #222222;
+  color: var(--text);
   font-size: 1.25rem;
   font-weight: 400;
 

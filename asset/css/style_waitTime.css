@@ -1,5 +1,14 @@
 @charset "utf-8";
 
+:root{
+  --background1: #ffffff;
+  --background2: #f1f1f1;
+  --background3: #f9f9f9;
+  --text: #222222;
+
+  --accent: #7FD9FB;
+}
+
 #sectionWaitTime{
   width: 90%;
 
@@ -15,6 +24,13 @@
   
   margin: 0;
   padding: 0.5rem 0;
+
+  color: var(--text);
+  font-size: 1.125rem;
+  font-weight: 400;
+
+  line-height: 1.5rem;
+  text-align: left;
 }
 
 .waitContainer{
@@ -31,10 +47,10 @@
   padding: 0;
   
   border-radius: 15px;
-  background: linear-gradient(225deg, #f9f9f9, #ffffff);
+  background: linear-gradient(225deg, var(--background3), var(--background1));
   box-shadow:
-    -15px 15px 30px #f1f1f1,
-    15px -15px 30px #ffffff;
+    -15px 15px 30px var(--background2),
+    15px -15px 30px var(--background1);
 }
 
 .waitContainer>h1{
@@ -47,7 +63,7 @@
   margin: 0;
   padding: 0.5rem 1.5rem 0 2.5rem;
 
-  color: #222222;
+  color: var(--text);
   font-size: 1.25rem;
   font-weight: 400;
 
@@ -65,7 +81,7 @@
   margin: 0;
   padding: 0 1.5rem 0.5rem 2.5rem;
 
-  color: #222222;
+  color: var(--text);
   font-size: 1.375rem;
   font-weight: 500;
 
@@ -85,7 +101,7 @@
 
   border-radius: 0 15px 15px 0;
 
-  color: #222222;
+  color: var(--text);
   font-size: 2.75rem;
   font-weight: 600;
 
@@ -98,7 +114,7 @@
 
   display: inline-block;
 
-  color: #222222;
+  color: var(--text);
   font-size: 0.75rem;
   font-weight: 600;
 }
@@ -224,7 +240,7 @@
   margin: 0;
   padding: 0 15%;
 
-  color: #f1f1f1;
+  color: var(--background2);
   font-size: 1.25rem;
   font-weight: 400;
 
@@ -241,7 +257,7 @@
   margin: 0;
   padding: 0 15%;
 
-  color: #f1f1f1;
+  color: var(--background2);
   font-size: 1.75rem;
   font-weight: 500;
 
@@ -258,7 +274,7 @@
   margin: 0 15% 0.5rem 15%;
   padding: 0.25rem 0;
 
-  color: #f1f1f1;
+  color: var(--background2);
   font-size: 1.125rem;
   font-weight: 500;
 
@@ -312,7 +328,7 @@
   margin: 0;
   padding: 0;
 
-  color: #f1f1f1;
+  color: var(--background2);
   font-size: 1rem;
   font-weight: 500;
 
@@ -329,7 +345,7 @@
   margin: 0;
   padding: 0;
 
-  color: #f1f1f1;
+  color: var(--background2);
   font-size: 3.5rem;
   font-weight: 600;
 
@@ -345,7 +361,7 @@
   margin: 0 0.5rem;
   padding: 0;
 
-  color: #f1f1f1;
+  color: var(--background2);
   font-size: 1rem;
   font-weight: 400;
 
@@ -365,10 +381,10 @@
   padding: 1.5rem 1rem;
   
   border-radius: 15px;
-  background: linear-gradient(225deg, #f9f9f9, #ffffff);
+  background: linear-gradient(225deg, var(--background3), var(--background1));
   box-shadow:
-    -15px 15px 30px #f1f1f1,
-    15px -15px 30px #ffffff;
+    -15px 15px 30px var(--background2),
+    15px -15px 30px var(--background1);
 }
 
 #waitTimeChart>h1{
@@ -377,7 +393,7 @@
   width: 100%;
   height: 2rem;
 
-  color: #222222;
+  color: var(--text);
   font-size: 1.5rem;
   font-weight: 400;
 
@@ -415,7 +431,7 @@
   margin: 0.625rem auto 0.625rem 0;
   padding: 0;
 
-  background-color: #7FD9FB;
+  background-color: var(--accent);
 
   border-radius: 0.5rem;
 }
@@ -449,7 +465,7 @@
   margin: 0.5rem 1rem 0.5rem auto;
   padding: 0;
 
-  color: #222222;
+  color: var(--text);
   font-size: 1.375rem;
   font-weight: 500;
 
