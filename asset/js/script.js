@@ -83,3 +83,33 @@ $(".navLink").click(function(){
 // }
 
 // setInterval(updateDate, 50);
+
+
+var darkColor = ["#111E34", "#010E04", "#1d3255", "#111E3488", "#E6E6E6", "#CCCCCC"];
+var lightColor = ["#ffffff", "#f1f1f1", "#f9f9f9", "#f1f1f188", "#222222", "#777777"];
+var darkMode = false;
+
+$("#colorMode").click(function(){
+  if(darkMode == false){
+    document.documentElement.style.setProperty('--background1', darkColor[0]);
+    document.documentElement.style.setProperty('--background2', darkColor[1]);
+    document.documentElement.style.setProperty('--background3', darkColor[2]);
+    document.documentElement.style.setProperty('--header', darkColor[3]);
+    document.documentElement.style.setProperty('--text', darkColor[4]);
+    document.documentElement.style.setProperty('--textPale', darkColor[5]);
+
+    document.getElementById("colorMode").innerHTML = '<i class="fa-solid fa-brush"></i>LightMode';
+    darkMode = true;
+  }
+  else{
+    document.documentElement.style.setProperty('--background1', lightColor[0]);
+    document.documentElement.style.setProperty('--background2', lightColor[1]);
+    document.documentElement.style.setProperty('--background3', lightColor[2]);
+    document.documentElement.style.setProperty('--header', lightColor[3]);
+    document.documentElement.style.setProperty('--text', lightColor[4]);
+    document.documentElement.style.setProperty('--textPale', lightColor[5]);
+
+    document.getElementById("colorMode").innerHTML = '<i class="fa-solid fa-brush"></i>DarkMode';
+    darkMode = false;
+  }
+})
