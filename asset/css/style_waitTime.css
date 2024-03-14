@@ -35,7 +35,10 @@
 
 .waitContainer{
   display: grid;
-  grid-template-columns: 1fr 6fr 5rem;
+  grid-template:
+    "class title time" 5rem
+    "desc desc desc" 23rem
+    / 1fr 6fr 5rem;
   
   width: 100%;
   height: 5rem;
@@ -48,9 +51,17 @@
   box-shadow:
     -15px 15px 30px var(--background2),
     15px -15px 30px var(--background1);
+
+  transition: all .25s;
 }
 
-.waitContainer>h1{
+.waitContainer.active{
+  height: 28rem;
+}
+
+.waitContainer>h2{
+  grid-area: class;
+
   display: block;
   width: 100%;
   height: 5rem;
@@ -66,12 +77,12 @@
   text-align: center;
 }
 
-.waitContainer>h1::after{
+.waitContainer>h2::after{
   content: "\f107";
   display: inline-block;
 
   width: 100%;
-  height: 5rem;
+  height: auto;
 
   margin: 0;
   padding: 0;
@@ -83,13 +94,21 @@
 
   line-height: 2.5rem;
   text-align: center;
+
+  transition: all .25s;
+  transform: rotate(0deg);
+  transform-origin: center;
 }
 
-.waitContainer.active>h1::after{
-  content: "\f106";
+.waitContainer.active>h2::after{
+  /* content: "\f106"; */
+
+  transform: rotate(180deg);
 }
 
-.waitTitle{
+.waitContainer>h1{
+  grid-area: title;
+
   display: block;
   width: 100%;
   height: 5rem;
@@ -105,7 +124,9 @@
   text-align: left;
 }
 
-.waitTime{
+.waitContainer>p{
+  grid-area: time;
+
   display: block;
   width: calc(100% - 1rem);
   height: 5rem;
@@ -122,7 +143,7 @@
   text-align: center;
 }
 
-.waitTime::after{
+.waitContainer>p::after{
   content: "分";
 
   display: inline-block;
@@ -132,224 +153,11 @@
   font-weight: 600;
 }
 
-/* #waitTime1{
-  background: url("../../image/test1.jpg") no-repeat center;
-  background-size: cover;
-  position: relative;
-  z-index: 0;
-  overflow: hidden;
-}
-
-#waitTime1:before{
-  content: '';
-  background: inherit;
-  filter: blur(4px);
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  z-index: -1;
-} */
-
 /* ======================================== */
 
-.classDesc{
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 10;
+.waitContainer>.waitContainerStretch{
+  grid-area: desc;
 
-  display: block;
-
-  width: 100%;
-  height: auto;
-
-  margin: 0;
-  padding: 1.5rem 0 2.5rem 0;
-
-  border-radius: 20px 20px 0 0;
-
-  background-color: #ffffff88;
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-
-  transform: translateY(100%);
-  transition: all .25s;
-}
-
-#classDesc1, #classDesc4, #classDesc7{
-  background: url("../../image/test1.jpg") no-repeat center;
-  background-size: cover;
-  overflow: hidden;
-}
-
-#classDesc2, #classDesc5, #classDesc8{
-  background: url("../../image/test2.jpg") no-repeat center;
-  background-size: cover;
-  overflow: hidden;
-}
-
-#classDesc3, #classDesc6, #classDesc9{
-  background: url("../../image/test3.jpg") no-repeat center;
-  background-size: cover;
-  overflow: hidden;
-}
-
-.classDesc:before{
-  content: '';
-  background: inherit;
-  filter: blur(15px);
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  z-index: -2;
-}
-
-.classDesc::after{
-  content: '';
-  background: #ffffff33;
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  z-index: -1;
-}
-
-.classDesc.current{
-  transform: translateY(0);
-}
-
-.classDescClose{
-  position: absolute;
-  top: 0rem;
-  right: 0rem;
-
-  display: block;
-
-  width: 8rem;
-  height: 5rem;
-
-  margin: 0;
-  padding: 0;
-
-  color: #d1d1d1;
-  font-size: 1.5rem;
-  font-weight: 500;
-
-  line-height: 5rem;
-  text-align: center;
-}
-
-.classDescClass{
-  display: block;
-
-  width: 70%;
-  height: 2rem;
-
-  margin: 0;
-  padding: 0 15%;
-
-  color: var(--background2);
-  font-size: 1.25rem;
-  font-weight: 400;
-
-  line-height: 2rem;
-  text-align: left;
-}
-
-.classDescTitle{
-  display: block;
-
-  width: 70%;
-  height: 2.5rem;
-
-  margin: 0;
-  padding: 0 15%;
-
-  color: var(--background2);
-  font-size: 1.75rem;
-  font-weight: 500;
-
-  line-height: 2.5rem;
-  text-align: left;
-}
-
-.classDescMapLink{
-  display: block;
-
-  width: 70%;
-  height: 2.5rem;
-
-  margin: 0 15% 0.5rem 15%;
-  padding: 0.25rem 0;
-
-  color: var(--background2);
-  font-size: 1.125rem;
-  font-weight: 500;
-
-  line-height: 2.5rem;
-  text-align: left;
-  text-decoration: none;
-}
-
-.classDescMapLink>i{
-  margin: 0 1rem 0 0;
-}
-
-/* .classDescDesc{
-  display: block;
-
-  width: 70%;
-  height: calc(1.375rem * 8);
-
-  margin: 0;
-  padding: 1rem 15%;
-
-  color: #222222;
-  font-size: 1rem;
-  font-weight: 300;
-
-  line-height: 1.375rem;
-  text-align: left;
-} */
-
-.classDescTimeContainer{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-
-  width: 70%;
-  height: 6rem;
-
-  margin: 0 calc(15% - 1rem);
-  padding: 1rem;
-
-  background: #ffffff33;
-  border-radius: 16px;
-  box-shadow: 0 4px 30px #0000001a;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid #ffffff4d;
-}
-
-.classDescTimeContainer>div>p{
-  display: block;
-
-  margin: 0;
-  padding: 0;
-
-  color: var(--background2);
-  font-size: 1rem;
-  font-weight: 500;
-
-  line-height: 1.5rem;
-  text-align: center;
-}
-
-.classDescTimeContainer>div{
   display: block;
 
   width: 100%;
@@ -358,28 +166,66 @@
   margin: 0;
   padding: 0;
 
-  color: var(--background2);
-  font-size: 3.5rem;
-  font-weight: 600;
-
-  line-height: 4.5rem;
-  text-align: center;
+  transition: all .25s;
+  transform: scaleY(0);
+  transform-origin: 5rem 0;
 }
 
-.classDescGroupTime::after, .classDescWaitTime::after {
-  content: "分";
+.waitContainer.active>.waitContainerStretch{
+  transform: scaleY(1);
+}
 
-  display: inline-block;
+.waitContainerStretch>h3{
+  display: block;
 
-  margin: 0 0.5rem;
-  padding: 0;
+  width: calc((100% - 5rem) / 7 * 6);
+  height: 1.5rem;
 
-  color: var(--background2);
-  font-size: 1rem;
-  font-weight: 400;
+  margin: 0;
+  padding: 0.25rem 5rem 0.25rem calc((100% - 5rem) / 7 * 1);
 
-  line-height: 6rem;
+  color: var(--textPale);
+  font-size: 1.125rem;
+  font-weight: 500;
+
+  line-height: 2.5rem;
   text-align: left;
+  text-decoration: none;
+}
+
+.waitContainerStretch>h3>i{
+  margin: 0 0.75rem 0 0;
+}
+
+.waitContainerStretch>p{
+  display: block;
+
+  width: calc((100% - 5rem) / 7 * 6);
+  height: 9rem;
+
+  margin: 0;
+  padding: 1rem 5rem 1rem calc((100% - 5rem) / 7 * 1);
+
+  color: var(--text);
+  font-size: 1.125rem;
+  font-weight: 300;
+
+  line-height: 1.5rem;
+  text-align: left;
+}
+
+.waitContainerStretch>img{
+  display: block;
+
+  width: 100%;
+  height: 10rem;
+
+  margin: 0;
+  padding: 0;
+  
+  object-fit: cover;
+
+  border-radius: 0 0 15px 15px;
 }
 
 /* ======================================== */
