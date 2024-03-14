@@ -405,3 +405,49 @@ footer{
 }
 
 /* ======================================== */
+
+.hscroll {
+  display: block;
+
+  width:100%;
+  height:auto;
+  
+  margin: 0;
+  padding: 0;
+
+  position:relative;
+}
+.hscroll ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  
+  width: 100%;
+  height: auto;
+
+  padding: 0;
+  margin: 0;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+.hscroll li {
+  display: block;
+
+  width: 100vw;
+  height: auto;
+
+  margin: 0;
+  padding: 0;
+  
+  list-style: none;
+  scroll-snap-align:center;
+}
+
+@media screen and (max-width:480px) {
+  .hscroll ul {
+    overflow-x:auto;
+  }
+}
