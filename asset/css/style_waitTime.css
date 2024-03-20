@@ -168,7 +168,7 @@
 
   transition: all .25s;
   transform: scaleY(0);
-  transform-origin: 5rem 0;
+  transform-origin: 0 0;
 }
 
 .waitContainer.active>.waitContainerStretch{
