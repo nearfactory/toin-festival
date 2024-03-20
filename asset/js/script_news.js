@@ -27,6 +27,7 @@ for(var i=0; i<(news.length)-1; i++){
   var newsBox = document.createElement('div');
   var newsDate = document.createElement('h3');
   var newsTitle = document.createElement('h1');
+  var newsDesc = document.createElement('p');
   
   newsBox.classList.add("newsContent");
   newsContainer.prepend(newsBox);
@@ -36,4 +37,19 @@ for(var i=0; i<(news.length)-1; i++){
   
   newsTitle.textContent = news[i+1][2];
   newsBox.appendChild(newsTitle);
+
+  newsDesc.textContent = news[i+1][3];
+  newsBox.appendChild(newsDesc);
 }
+
+
+
+
+
+
+
+
+
+$(".newsContent").click(function(){
+  $(this).toggleClass("active");
+})
