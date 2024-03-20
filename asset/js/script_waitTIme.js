@@ -88,6 +88,10 @@ $("#waitClass9").click(function(){
   }
 });
 
+$(".waitContainer").click(function(){
+  $(this).toggleClass("active");
+});
+
 $(".classDescClose").click(function(){
   $(".classDesc").removeClass("current");
 })
@@ -97,6 +101,10 @@ $("#navGym").click(function(){
 })
 
 $("#navMap").click(function(){
+  $(".classDesc").removeClass("current");
+})
+
+$("#navNews").click(function(){
   $(".classDesc").removeClass("current");
 })
 
