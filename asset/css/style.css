@@ -275,7 +275,7 @@ nav>span{
   display: block;
 
   width: 100%;
-  height: 3rem;
+  height: auto;
 
   margin: 1rem 0;
   padding: 0;
@@ -283,9 +283,25 @@ nav>span{
   color: var(--text);
   font-size: 1.5rem;
   font-weight: 400;
-  font-variant-numeric: tabular-nums;
 
   line-height: 3rem;
+  text-align: center;
+}
+
+.section>h1>small{
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  margin: 1rem 0;
+  padding: 0;
+
+  color: var(--text);
+  font-size: 1.125rem;
+  font-weight: 400;
+
+  line-height: 1.125rem;
   text-align: center;
 }
 
