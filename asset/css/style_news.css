@@ -77,17 +77,18 @@
 }
 
 .newsContent:nth-of-type(1)::before{
-  content: "LATEST!";
+  content: "NEW!";
 
   position: absolute;
   top: -2rem;;
 
   display: block;
 
-  width: 5rem;
+  width: 4rem;
   height: 2rem;
 
   background-color: var(--accent);
+  border: var(--accent) 1px solid;
   border-radius: 5px 5px 0 0;
 
   color: var(--text);

@@ -175,7 +175,7 @@
   transform: scaleY(1);
 }
 
-.waitContainerStretch>h3{
+.waitContainerStretch>a{
   display: block;
 
   width: calc((100% - 5rem) / 7 * 6);
@@ -190,10 +190,11 @@
 
   line-height: 2.5rem;
   text-align: left;
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
 }
 
-.waitContainerStretch>h3>i{
+.waitContainerStretch>a>i{
   margin: 0 0.75rem 0 0;
 }
 

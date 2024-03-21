@@ -1,4 +1,4 @@
-// Load schedules from CSV
+// スケジュールをCSVファイルから取得
 
 var news = [];
 
@@ -48,7 +48,7 @@ for(var i=0; i<(news.length)-1; i++){
 
 
 
-
+// タップされたニュースの詳細を表示
 
 $(".newsContent").click(function(){
   $(this).toggleClass("active");

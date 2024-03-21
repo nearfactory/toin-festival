@@ -112,7 +112,7 @@ $("#navAboutUs").click(function(){
   $(".classDesc").removeClass("current");
 })
 
-$(".classDescMapLink").click(function(){
+$(".waitContainerStretch>a").click(function(){
   $(".classDesc").removeClass("current");
   $(".navItem").removeClass("current");
   $("#navMap").addClass("current");
