@@ -72,6 +72,7 @@
   transition: all 0s;
 }
 
+
 .newsContent.active{
   height: 13rem;
 }
