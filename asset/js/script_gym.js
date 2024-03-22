@@ -25,7 +25,7 @@ function convertCSVtoArray(str){
 day1 = getCSV("./asset/csv/day1.csv");
 day2 = getCSV("./asset/csv/day2.csv");
 
-for(var i=0; i<day1.length; i++){
+for(var i=1; i<day1.length; i++){
   var schedulesDay1 = document.getElementById("schedulesDay1");
 
   var scheduleBox = document.createElement('div');
@@ -61,7 +61,7 @@ for(var i=0; i<day1.length; i++){
     
     scheduleMainBox.classList.add("scheduleDesc");
     scheduleDesc.textContent = day1[i][6];
-    scheduleBox.appendChild(scheduleDesc);
+    scheduleBox.appendChild(scheduleDesc)
   }
   else{
     scheduleBox.classList.add("scheduleSpan");
@@ -69,7 +69,7 @@ for(var i=0; i<day1.length; i++){
   }
 }
 
-for(var i=0; i<day2.length; i++){
+for(var i=1; i<day2.length; i++){
   var schedulesDay2 = document.getElementById("schedulesDay2");
 
   var scheduleBox = document.createElement('div');
@@ -155,10 +155,10 @@ var firstHeight1;
 var firstHeight2;
 
 function timeCalc(){
-  var day1Start = new Date("2024-03-10 09:00:00").getTime();
-  var day1End = new Date("2024-03-10 18:00:00").getTime();
-  var day2Start = new Date("2024-03-11 09:00:00").getTime();
-  var day2End = new Date("2024-03-11 18:00:00").getTime();
+  var day1Start = new Date("2024-03-22 09:00:00").getTime();
+  var day1End = new Date("2024-03-22 18:00:00").getTime();
+  var day2Start = new Date("2024-03-23 09:00:00").getTime();
+  var day2End = new Date("2024-03-23 18:00:00").getTime();
   var now = new Date().getTime();
 
   var day1Time = day1End - day1Start;
@@ -215,3 +215,15 @@ function timeCalc(){
 
 
 setInterval(timeCalc, 10);
+
+// ========================================
+
+$("#sectionGym>a").click(function(){
+  $(".classDesc").removeClass("current");
+  $(".navItem").removeClass("current");
+  $("#navMap").addClass("current");
+  $(".section").removeClass("current");
+  $("#sectionMap").addClass("current");
+})
+
+// ========================================

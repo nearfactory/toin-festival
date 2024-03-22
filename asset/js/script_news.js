@@ -50,6 +50,31 @@ for(var i=0; i<(news.length)-1; i++){
 
 // タップされたニュースの詳細を表示
 
+function handle(event) {
+  event.preventDefault();
+}
+
 $(".newsContent").click(function(){
-  $(this).toggleClass("active");
+  if($(this).hasClass("active")){
+    $(this).removeClass("active");
+    $("#newsModal").removeClass("active");
+    $("#newsModalBackground").removeClass("active");
+    document.removeEventListener('touchmove', handle, { passive: false });
+    document.removeEventListener('mousewheel', handle, { passive: false });
+  }
+  else{
+    $(this).addClass("active");
+    $("#newsModal").addClass("active");
+    $("#newsModalBackground").addClass("active");
+    document.addEventListener('touchmove', handle, { passive: false });
+    document.addEventListener('mousewheel', handle, { passive: false });
+  }
+})
+
+$("#newsModalBackground").click(function(){
+  $(".newsContent").removeClass("active");
+  $("#newsModal").removeClass("active");
+  $("#newsModalBackground").removeClass("active");
+  document.removeEventListener('touchmove', handle, { passive: false });
+  document.removeEventListener('mousewheel', handle, { passive: false });
 })
