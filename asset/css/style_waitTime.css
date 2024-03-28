@@ -34,6 +34,8 @@
 }
 
 .waitContainer{
+  position: relative;
+
   display: grid;
   grid-template:
     "class title time" 5rem
@@ -41,7 +43,7 @@
     / 1fr 6fr 5rem;
   
   width: 100%;
-  height: 5rem;
+  height: 6rem;
 
   margin: 0 auto 1.5rem auto;
   padding: 0;
@@ -69,16 +71,21 @@
   margin: 0;
   padding: 0;
 
-  color: var(--text);
+  color: var(--textPale);
   font-size: 1.375rem;
   font-weight: 500;
 
-  line-height: 2.5rem;
+  line-height: 5rem;
   text-align: center;
 }
 
-.waitContainer>h2::after{
+.waitContainer::after{
   content: "\f107";
+
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0;
+
   display: inline-block;
 
   width: 100%;
@@ -89,10 +96,10 @@
 
   color: var(--textPale);
   font-family: "Font Awesome 6 Free";
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 900;
 
-  line-height: 2.5rem;
+  line-height: 1rem;
   text-align: center;
 
   transition: all .25s;
@@ -100,8 +107,8 @@
   transform-origin: center;
 }
 
-.waitContainer.active>h2::after{
-  /* content: "\f106"; */
+.waitContainer.active::after{
+  bottom: 22.75rem;
 
   transform: rotate(180deg);
 }
