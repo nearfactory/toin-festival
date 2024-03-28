@@ -1,0 +1,114 @@
+@charset "utf-8";
+
+:root{
+  --headerHeight: 3rem;
+  --navHeight: 4rem;
+  --footerHeight: 3rem;
+
+  --background1: #ffffff;
+  --background2: #f1f1f1;
+  --header: #f1f1f188;
+  --text: #222222;
+  --textPale: #777777;
+
+  --accent: #7FD9FB;
+}
+
+#sectionHome{
+  width: 100%;
+
+  margin: 0;
+}
+
+#homeConcept{
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  margin: 0;
+  padding: 15rem 0;
+
+  background-color: var(--accent);
+  background-image: url("../../image/yuji-black.jpg");
+  background-size: cover;
+  background-position: center;
+
+  transition: all 1s;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+#homeConcept.active{
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 80%);
+}
+
+/* #homeConcept::before{
+  content: "2024 Concept";
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+
+  display: block;
+
+  width: 30%;
+  height: 2.5rem;
+
+  margin: 0;
+  padding: 0;
+
+  background-color: var(--text);
+
+  color: var(--background2);
+  font-size: 1.125rem;
+  font-weight: 700;
+
+  line-height: 2.5rem;
+  text-align: center;
+} */
+
+#homeConcept>h3{
+  color: var(--background1);
+  font-size: 1.75rem;
+  font-weight: 600;
+
+  line-height: 3.5rem;
+  text-align: center;
+}
+
+#homeRemainTime{
+  position: relative;
+
+  display: block;
+
+  width: 70%;
+  height: auto;
+
+  margin: 1rem auto;
+  padding: 1rem 1rem;
+
+  border-radius: 1rem;
+  background: linear-gradient(225deg, var(--background3), var(--background1));
+  box-shadow:
+    -15px 15px 30px var(--background2),
+    15px -15px 30px var(--background1);
+}
+
+#remainTimeContainer{
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  margin: 0;
+  padding: 0;
+
+  color: var(--text);
+  font-size: 1.75rem;
+  font-weight: 600;
+
+  line-height: 3.5rem;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
