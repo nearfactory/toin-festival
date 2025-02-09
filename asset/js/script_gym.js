@@ -257,6 +257,9 @@ initSchedules();
 var now;
 var nowPosition = 0;
 var scheduleOpen = 0;
+var scheduleOpenDay0 = 0;
+var scheduleOpenDay1 = 0;
+var scheduleOpenDay2 = 0;
 var nowgoing = 0;
 
 function timeCalc(){
@@ -496,6 +499,7 @@ $("#day0").click(function(){
   daySelect = 0;
   $("#mapLink17").addClass("active");
   $("#mapLink18").removeClass("active");
+  scheduleOpen = scheduleOpenDay0;
 });
 
 $("#day1").click(function(){
@@ -509,6 +513,7 @@ $("#day1").click(function(){
   daySelect = 1;
   $("#mapLink17").removeClass("active");
   $("#mapLink18").addClass("active");
+  scheduleOpen = scheduleOpenDay1;
 });
 
 $("#day2").click(function(){
@@ -522,6 +527,7 @@ $("#day2").click(function(){
   daySelect = 2;
   $("#mapLink17").removeClass("active");
   $("#mapLink18").addClass("active");
+  scheduleOpen = scheduleOpenDay2;
 })
 
 // ========================================
@@ -548,6 +554,15 @@ $(document).on("click", ".schedule", function () {
 
     if(clickedScheduleId <= nowgoing && clickedScheduleId != day1.length-1){
       scheduleOpen -= 1;
+      if($("#scheduleDay0").hasClass("active")){
+        scheduleOpenDay0 -= 1;
+      }
+      else if($("#scheduleDay1").hasClass("active")){
+        scheduleOpenDay1 -= 1;
+      }
+      else if($("#scheduleDay2").hasClass("active")){
+        scheduleOpenDay2 -= 1;
+      }
     }
   }
   else{
@@ -555,6 +570,15 @@ $(document).on("click", ".schedule", function () {
     
     if(clickedScheduleId <= nowgoing && clickedScheduleId != day1.length-1){
       scheduleOpen += 1;
+      if($("#scheduleDay0").hasClass("active")){
+        scheduleOpenDay0 += 1;
+      }
+      else if($("#scheduleDay1").hasClass("active")){
+        scheduleOpenDay1 += 1;
+      }
+      else if($("#scheduleDay2").hasClass("active")){
+        scheduleOpenDay2 += 1;
+      }
     }
   }
 });
