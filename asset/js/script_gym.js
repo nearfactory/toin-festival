@@ -5,9 +5,9 @@ const day1CSV = './asset/csv/day1.csv';
 const day2CSV = './asset/csv/day2.csv';
 
 // 各日の日付を入力
-const day0date = "2024-09-10T";
-const day1date = "2024-09-11T";
-const day2date = "2024-09-12T";
+const day0date = "2025-02-09T";
+const day1date = "2025-02-10T";
+const day2date = "2025-02-11T";
 
 // 各ストレッチ有要素の高さ
 const classHeight = 2.5;
